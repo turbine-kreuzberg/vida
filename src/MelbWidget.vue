@@ -6,14 +6,14 @@ import { ref } from 'vue';
 
 const isOpen = ref(false);
 
-const doSomething = () => {
+const toggle = () => {
   isOpen.value = !isOpen.value;
 };
 </script>
 
 <template>
   <div class="melb-widget">
-    <Opener @click="doSomething" />
+    <Opener @click="toggle" />
     <Popup v-if="isOpen"><HelpCenter /></Popup>
   </div>
 </template>
@@ -21,5 +21,7 @@ const doSomething = () => {
 <style lang="scss" scoped>
 .melb-widget {
   font-family: arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
 }
 </style>

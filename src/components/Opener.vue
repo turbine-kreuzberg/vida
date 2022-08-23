@@ -11,7 +11,7 @@
   height: 50px;
   background: red;
   text-align: center;
-  padding-top: 16px;
+  padding-top: 17px;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
