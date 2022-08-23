@@ -12,8 +12,14 @@ const doSomething = () => {
 </script>
 
 <template>
-  <Opener @click="doSomething" />
-  <Popup v-if="isOpen">
-    <HelpCenter />
-  </Popup>
+  <div class="melb-widget">
+    <Opener @click="doSomething" />
+    <Popup v-if="isOpen"><HelpCenter /></Popup>
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.melb-widget {
+  font-family: arial, sans-serif;
+}
+</style>

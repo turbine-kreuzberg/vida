@@ -3,7 +3,7 @@
 </template>
 <style lang="scss" scoped>
 .opener {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 10px;
   border-radius: 100px;
@@ -11,7 +11,7 @@
   height: 50px;
   background: red;
   text-align: center;
-  padding-top: 13px;
+  padding-top: 16px;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;

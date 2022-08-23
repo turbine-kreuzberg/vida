@@ -5,7 +5,7 @@
 </template>
 <style scoped lang="scss">
 .melb-popup {
-  position: absolute;
+  position: fixed;
   right: 10px;
   bottom: 70px;
   width: 400px;
