@@ -10,7 +10,6 @@ their perpetrators etc....
 Copy following snipped anywhere on your website.
 
 ```html
-
 <script type="module" crossorigin src="https://turbine-kreuzberg.github.io/melb/code.js"></script>
 <link rel="stylesheet" href="https://turbine-kreuzberg.github.io/melb/style.css">
 ```
