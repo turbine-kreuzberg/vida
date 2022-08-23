@@ -10,7 +10,9 @@
   bottom: 70px;
   width: 400px;
   z-index: 1000;
-  background: yellow;
-  border-radius: 30px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 </style>
