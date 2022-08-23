@@ -7,7 +7,7 @@ their perpetrators etc....
 
 ## How to apply MELB on your website
 
-Copy following snipped anywhere on your website.
+Copy following snippet anywhere on your website.
 
 ```html
 <script type="module" crossorigin src="https://turbine-kreuzberg.github.io/melb/code.js"></script>
