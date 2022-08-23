@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
-    "rollout": "vue-tsc --noEmit && vite build && mkdir -p ./distributions/version.latest && cp -R ./dist/* ./distributions/version.latest/"
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src"
   },
   "dependencies": {
     "vue": "^3.2.37"
