@@ -2,19 +2,18 @@
 import HelpCenter from './components/Organism/HelpCenter.vue';
 import Popup from './components/Molecule/Popup.vue';
 import Opener from './components/Molecule/Opener.vue';
-import { ref } from 'vue';
 
-const isOpen = ref(false);
+import { usePopup } from './composables/usePopup';
 
-const toggle = () => {
-  isOpen.value = !isOpen.value;
-};
+const { isOpen, toggle, popupRef } = usePopup();
 </script>
 
 <template>
   <div class="melb-widget">
     <Opener @click="toggle" />
-    <Popup v-if="isOpen"><HelpCenter /></Popup>
+    <Popup v-if="isOpen" ref="popupRef">
+      <HelpCenter />
+    </Popup>
   </div>
 </template>
 
