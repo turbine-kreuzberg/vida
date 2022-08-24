@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import ContactMe from './Module/ContactMe.vue';
+import ContactMe from '../Organism/Module/ContactMe.vue';
 import { shallowRef } from 'vue';
-import Headline from './Headline.vue';
-import TextContent from './TextContent.vue';
+import Headline from '../Atom/Headline.vue';
+import TextContent from '../Atom/TextContent.vue';
 
 const currentModule = shallowRef<any>(null);
 
