@@ -2,7 +2,7 @@
 import ContactMe from '../Organism/Module/ContactMe.vue';
 import { shallowRef } from 'vue';
 import Headline from '../Atom/Headline.vue';
-import TextContent from '../Atom/TextContent.vue';
+import TextContent from '../Molecule/TextContent.vue';
 
 const currentModule = shallowRef<any>(null);
 
