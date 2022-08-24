@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Headline from '../../Atom/Headline.vue';
-import TextContent from '../../Atom/TextContent.vue';
+import TextContent from '../../Molecule/TextContent.vue';
 
 const send = () => {
   alert('Now send this content.');
