@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelpCenter from './components/HelpCenter.vue';
-import Popup from './components/Popup.vue';
-import Opener from './components/Opener.vue';
+import HelpCenter from './components/Organism/HelpCenter.vue';
+import Popup from './components/Molecule/Popup.vue';
+import Opener from './components/Molecule/Opener.vue';
 import { ref } from 'vue';
 
 const isOpen = ref(false);
