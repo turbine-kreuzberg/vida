@@ -43,6 +43,7 @@ const props = withDefaults(defineProps<Props>(), {
     font-family: inherit;
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   :deep(ul) {
