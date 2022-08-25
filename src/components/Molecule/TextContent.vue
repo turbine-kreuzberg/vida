@@ -33,6 +33,14 @@ const props = withDefaults(defineProps<Props>(), {
     margin: 0 0 1em 0;
   }
 
+  :deep(ul) {
+    margin: 0 0 20px 20px;
+    padding: 0;
+    li {
+      margin: 0 5px 5px 5px;
+    }
+  }
+
   &.important {
     font-size: 1.1em;
     font-weight: bold;
