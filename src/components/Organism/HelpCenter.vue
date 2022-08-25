@@ -41,7 +41,7 @@ const pages: IPage[] = [
     <p>
       <img
         style="width: 100%; height: auto;"
-        alt="hand closed"
+        alt="hand sign"
         src="https://turbine-kreuzberg.github.io/melb/img/hand-sign.png"
       />
     </p>
