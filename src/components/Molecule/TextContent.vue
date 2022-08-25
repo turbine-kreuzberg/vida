@@ -34,6 +34,7 @@ const props = withDefaults(defineProps<Props>(), {
   }
 
   :deep(ul) {
+    list-style-type: disc;
     margin: 0 0 20px 20px;
     padding: 0;
     li {
