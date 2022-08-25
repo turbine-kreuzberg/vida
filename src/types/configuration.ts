@@ -5,5 +5,6 @@ export interface IConfiguration {
     name: string;
     phone: string;
     information: string;
+    chat?: string | null;
   };
 }

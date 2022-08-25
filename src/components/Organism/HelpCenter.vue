@@ -102,12 +102,9 @@ const pages: IPage[] = [
         </a>
         <a class="melb-module"> Find a safe help resource </a>
         <a
+          v-if="configuration.institution.chat"
           class="melb-module"
-          @click="
-            linkWithWarning(
-              'https://login.beranet.de/chatlight/index.php?firma_id=850&type=infochat'
-            )
-          "
+          @click="linkWithWarning(configuration.institution.chat)"
         >
           Go to livechat
         </a>

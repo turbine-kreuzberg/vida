@@ -18,10 +18,12 @@ each country. Please choose a snipped based on the ngo and country that fits you
   window.breakout = {
     language: 'en',
     emergencyNumber: '110',
+    chat: 'https://', 
     institution: {
       name: 'Hilfetelefon',
       phone: '08000116016',
-      information: "<p>Das Hilfetelefon \"Gewalt gegen Frauen\" ist ein bundesweites Beratungsangebot für Frauen, die Gewalt erlebt haben oder noch erleben. Unter der Nummer 08000 116 016 und via Online-Beratung unterstützen wir Betroffene aller Nationalitäten, mit und ohne Behinderung – 365 Tage im Jahr, rund um die Uhr. Auch Angehörige, Freundinnen und Freunde sowie Fachkräfte beraten wir anonym und kostenfrei.</p>"
+      information: "<p>Das Hilfetelefon \"Gewalt gegen Frauen\" ist ein bundesweites Beratungsangebot für Frauen, die Gewalt erlebt haben oder noch erleben. Unter der Nummer 08000 116 016 und via Online-Beratung unterstützen wir Betroffene aller Nationalitäten, mit und ohne Behinderung – 365 Tage im Jahr, rund um die Uhr. Auch Angehörige, Freundinnen und Freunde sowie Fachkräfte beraten wir anonym und kostenfrei.</p>",
+      chat: 'https://login.beranet.de/chatlight/index.php?firma_id=850&type=infochat'
     }
   }
 </script>
