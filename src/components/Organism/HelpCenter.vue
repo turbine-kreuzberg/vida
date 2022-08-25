@@ -34,7 +34,11 @@ const openPage = (page: IPage) => {
 const pages: IPage[] = [
   {
     title: 'The Universal Hand Signal for Help',
-    content: 'here some content'
+    content: `
+      <p>here some content</p>
+      <img alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-open.png" />
+      <img alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-closed.png" />
+    `
   },
   {
     title: 'About this widget',
