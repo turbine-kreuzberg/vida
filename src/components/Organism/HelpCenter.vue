@@ -39,8 +39,11 @@ const pages: IPage[] = [
       show they need help and want someone to check in with them in a safe way.
     </p>
     <p>
-      <img style="width: 70px" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-open.png" />
-      <img style="width: 70px" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-closed.png" />
+      <img
+        style="width: 100%; height: auto;"
+        alt="hand closed"
+        src="https://turbine-kreuzberg.github.io/melb/img/hand-sign.png"
+      />
     </p>
     <p>This can be used in a video call or video post, in a public place, etc.</p>
   `
