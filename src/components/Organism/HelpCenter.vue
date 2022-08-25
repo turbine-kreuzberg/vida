@@ -5,6 +5,7 @@ import Page from '../Organism/Module/Page.vue';
 import { IPage } from '../../types/page';
 import { IModule } from '../../types/module';
 import ScrollArea from '../Molecule/ScrollArea.vue';
+import Map from '../Organism/Module/Map.vue';
 import { IConfiguration } from '../../types/configuration';
 
 // @ts-ignore
@@ -27,6 +28,12 @@ const openPage = (page: IPage) => {
   currentModule.value = {
     component: Page,
     props: { page }
+  };
+};
+
+const openSafePlaces = () => {
+  currentModule.value = {
+    component: Map
   };
 };
 
@@ -108,7 +115,7 @@ const pages: IPage[] = [
           Call {{ configuration.institution.name }}<br />
           <span class="melb-small">{{ configuration.institution.phone }}</span>
         </a>
-        <a class="melb-module"> Find a safe help resource </a>
+        <a class="melb-module" @click="openSafePlaces()"> Find a safe help resource </a>
         <a
           v-if="configuration.institution.chat"
           class="melb-module"

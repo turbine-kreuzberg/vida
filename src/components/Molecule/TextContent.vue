@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
 <style lang="scss" scoped>
 .melb-text-content {
   font-size: 0.9em;
-  line-height: 1.5em;
+  line-height: 1.7em;
   margin-bottom: 20px;
 
   :deep(a) {
