@@ -49,13 +49,18 @@ const pages: IPage[] = [
     title: 'What can you do if someone signals to you?',
     content: `
       <p>
-        If you see someone use the Signal for Help, check in with the person safely to find out what they need and
-        want you to do.
+        If you see someone use the Signal for Help, check in with the person safely to find out what they
+        need and want you to do.
       </p>
       <p>They may:</p>
-      <ul><li>want to talk or get information</li><li>ask for help finding services</li></ul>
+      <ul>
+        <li>want to talk or get information</li>
+        <li>ask for help finding services</li>
+        <li><strong>want to use your phone</strong> or device to search for help</li>
+      </ul>
       <p>Please do not assume they want you to call the authorities. Let them take the lead.</p>
-      <p>Ask questions that can be answered with "Yes" or "No."</p>`
+      <p>Ask questions that can be answered with "Yes" or "No."</p>
+    `
   },
   {
     title: `Information about ${configuration.institution.name}`,
