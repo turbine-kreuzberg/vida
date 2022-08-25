@@ -1,8 +1,8 @@
 <script setup lang="ts">
 interface Props {
-  important: boolean;
-  centered: boolean;
-  small: boolean;
+  important?: boolean;
+  centered?: boolean;
+  small?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {

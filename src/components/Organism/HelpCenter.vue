@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { shallowRef } from 'vue';
 import TextContent from '../Molecule/TextContent.vue';
+import Page from '../Organism/Module/Page.vue';
+import { IPage } from '../../types/page';
+import { IModule } from '../../types/module';
 
 const emergencyNumber = '112';
 const institution = {
   name: 'Amnesty International',
   phone: '004912341234'
 };
-const currentModule = shallowRef<any>(null);
+const currentModule = shallowRef<IModule | null>(null);
 
 const back = () => {
   currentModule.value = null;
@@ -20,6 +23,24 @@ const linkWithWarning = (link: string) => {
 
   if (accepted) self.location.href = link;
 };
+
+const openPage = (page: IPage) => {
+  currentModule.value = {
+    component: Page,
+    props: { page }
+  };
+};
+
+const pages: IPage[] = [
+  {
+    title: 'The Universal Hand Signal for Help',
+    content: 'here some content'
+  },
+  {
+    title: 'About this widget',
+    content: 'here some content'
+  }
+];
 </script>
 
 <template>
@@ -42,7 +63,7 @@ const linkWithWarning = (link: string) => {
       <div class="melb-modules">
         <a class="melb-module" :href="`tel:${institution.phone}`">
           Call {{ institution.name }}<br />
-          <span class="small">{{ institution.phone }}</span>
+          <span class="melb-small">{{ institution.phone }}</span>
         </a>
         <a class="melb-module"> Find a safe help resource </a>
         <a
@@ -56,10 +77,15 @@ const linkWithWarning = (link: string) => {
           Go to livechat
         </a>
       </div>
+      <div class="melb-link-list">
+        <div v-for="page in pages">
+          <a href="#" @click.prevent="openPage(page)">{{ page.title }}</a>
+        </div>
+      </div>
     </div>
     <div v-else>
       <div class="melb-back" @click="back">&lt; Back</div>
-      <component :is="currentModule" />
+      <component :is="currentModule.component" v-bind="currentModule.props" />
     </div>
   </div>
 </template>
@@ -74,7 +100,7 @@ a {
   text-decoration: none;
 }
 
-.small {
+.melb-small {
   font-size: 0.8em;
   color: #666;
 }
@@ -83,6 +109,7 @@ a {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  margin-bottom: 40px;
 }
 
 .melb-module {
@@ -103,5 +130,15 @@ a {
   margin-bottom: 20px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.melb-link-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  a {
+    text-decoration: underline;
+  }
 }
 </style>
