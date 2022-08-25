@@ -36,16 +36,34 @@ const pages: IPage[] = [
   {
     title: 'The Universal Hand Signal for Help',
     content: `
-      <p>here some content</p>
-      <img width="70" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-open.png" />
-      <img width="70" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-closed.png" />
-      <img width="70" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-open.png" />
-    `
+    <p>
+      The universal "<strong>Signal for Help</strong>" is a simple one-handed sign someone can use to silently
+      show they need help and want someone to check in with them in a safe way.
+    </p>
+    <img width="70" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-open.png" />
+    <img width="70" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-closed.png" />
+    <p>This can be used in a video call or video post, in a public place, etc.</p>
+  `
   },
   {
-    title: 'About this widget',
-    content:
-      'here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />'
+    title: 'What can you do if someone signals to you?',
+    content: `
+      <p>
+        If you see someone use the Signal for Help, check in with the person safely to find out what they need and
+        want you to do.
+      </p>
+      <p>They may:</p>
+      <ul><li>want to talk or get information</li><li>ask for help finding services</li></ul>
+      <p>Please do not assume they want you to call the authorities. Let them take the lead.</p>
+      <p>Ask questions that can be answered with "Yes" or "No."</p>`
+  },
+  {
+    title: 'Information about (insert NGO name here)',
+    content: `<p>Here the NGO can manage this content via configuration tool</p>`
+  },
+  {
+    title: 'About this Widget',
+    content: `<p>How can I host this widget on my site?</p><p>Legal disclaimer & data storage info</p>`
   }
 ];
 </script>
