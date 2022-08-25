@@ -5,12 +5,10 @@ import Page from '../Organism/Module/Page.vue';
 import { IPage } from '../../types/page';
 import { IModule } from '../../types/module';
 import ScrollArea from '../Molecule/ScrollArea.vue';
+import { IConfiguration } from '../../types/configuration';
 
-const emergencyNumber = '112';
-const institution = {
-  name: 'Amnesty International',
-  phone: '004912341234'
-};
+// @ts-ignore
+const configuration: IConfiguration = window.breakout;
 const currentModule = shallowRef<IModule | null>(null);
 
 const back = () => {
@@ -40,8 +38,10 @@ const pages: IPage[] = [
       The universal "<strong>Signal for Help</strong>" is a simple one-handed sign someone can use to silently
       show they need help and want someone to check in with them in a safe way.
     </p>
-    <img style="width: 70px" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-open.png" />
-    <img style="width: 70px" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-closed.png" />
+    <p>
+      <img style="width: 70px" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-open.png" />
+      <img style="width: 70px" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-closed.png" />
+    </p>
     <p>This can be used in a video call or video post, in a public place, etc.</p>
   `
   },
@@ -58,12 +58,20 @@ const pages: IPage[] = [
       <p>Ask questions that can be answered with "Yes" or "No."</p>`
   },
   {
-    title: 'Information about (insert NGO name here)',
-    content: `<p>Here the NGO can manage this content via configuration tool</p>`
+    title: `Information about ${configuration.institution.name}`,
+    content: `${configuration.institution.information}`
   },
   {
     title: 'About this Widget',
-    content: `<p>How can I host this widget on my site?</p><p>Legal disclaimer & data storage info</p>`
+    content: `
+      <h3>How can I host this widget on my site?</h3>
+      <p>
+        Go to <a href="https://github.com/turbine-kreuzberg/melb#readme">breakout git repository</a>
+        to copy and paste a widget for your region and institution (ngo).
+      </p>
+      <h3>Legal disclaimer & data storage info</h3>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    `
   }
 ];
 </script>
@@ -83,12 +91,14 @@ const pages: IPage[] = [
       </text-content>
       <text-content :important="true" :centered="true">
         If you or someone you know is in immediate danger, please call
-        <a :href="`tel:${emergencyNumber}`">{{ emergencyNumber }}</a>
+        <a :href="`tel:${configuration.emergencyNumber}`">{{
+          configuration.emergencyNumber
+        }}</a>
       </text-content>
       <div class="melb-modules">
-        <a class="melb-module" :href="`tel:${institution.phone}`">
-          Call {{ institution.name }}<br />
-          <span class="melb-small">{{ institution.phone }}</span>
+        <a class="melb-module" :href="`tel:${configuration.institution.phone}`">
+          Call {{ configuration.institution.name }}<br />
+          <span class="melb-small">{{ configuration.institution.phone }}</span>
         </a>
         <a class="melb-module"> Find a safe help resource </a>
         <a

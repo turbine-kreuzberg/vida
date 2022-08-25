@@ -29,8 +29,20 @@ const props = withDefaults(defineProps<Props>(), {
   line-height: 1.5em;
   margin-bottom: 20px;
 
+  :deep(a) {
+    color: inherit;
+  }
+
   :deep(p) {
     margin: 0 0 1em 0;
+  }
+
+  :deep(h3) {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: inherit;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
   }
 
   :deep(ul) {
