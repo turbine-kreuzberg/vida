@@ -18,7 +18,6 @@ each country. Please choose a snipped based on the ngo and country that fits you
   window.breakout = {
     language: 'en',
     emergencyNumber: '110',
-    chat: 'https://', 
     institution: {
       name: 'Hilfetelefon',
       phone: '08000116016',
