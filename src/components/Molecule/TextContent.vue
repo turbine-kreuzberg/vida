@@ -29,6 +29,11 @@ const props = withDefaults(defineProps<Props>(), {
   line-height: 1.5em;
   margin-bottom: 20px;
 
+  img {
+    width: auto;
+    height: auto;
+  }
+
   :deep(p) {
     margin: 0 0 1em 0;
   }
