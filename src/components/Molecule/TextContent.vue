@@ -31,6 +31,7 @@ const props = withDefaults(defineProps<Props>(), {
 
   :deep(a) {
     color: inherit;
+    text-decoration: underline;
   }
 
   :deep(p) {
