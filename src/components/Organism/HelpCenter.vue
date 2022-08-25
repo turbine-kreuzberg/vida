@@ -1,38 +1,66 @@
 <script setup lang="ts">
-import ContactMe from '../Organism/Module/ContactMe.vue';
 import { shallowRef } from 'vue';
-import Headline from '../Atom/Headline.vue';
 import TextContent from '../Molecule/TextContent.vue';
 
-const currentModule = shallowRef<any>(null);
-
-const openContactMe = async () => {
-  currentModule.value = ContactMe;
+const emergencyNumber = '112';
+const institution = {
+  name: 'Amnesty International',
+  phone: '004912341234'
 };
+const currentModule = shallowRef<any>(null);
 
 const back = () => {
   currentModule.value = null;
+};
+
+const linkWithWarning = (link: string) => {
+  const accepted = window.confirm(
+    'Warning this link will appear in your browser history. You are leaving anonymous mode here. Do you want to proceed? '
+  );
+
+  if (accepted) self.location.href = link;
 };
 </script>
 
 <template>
   <div class="melb-help-center">
     <div v-if="!currentModule">
-      <headline label="How do you want to proceed?" />
-      <text-content>
-        This box is completely anonymous and not traceable. In order to close it just
-        click somewhere outside of the box, or simple use the "ESCAPE" key on your
-        keyboard.
+      <text-content :small="true">
+        <p>
+          This widget provides anonymous access to assistance for
+          <strong>victims of domestic violence.</strong>
+        </p>
+        <p>
+          This box will disappear immediately if you click the X button or type "ESC" on
+          your keyboard or click outside of this popup.
+        </p>
+      </text-content>
+      <text-content :important="true" :centered="true">
+        If you or someone you know is in immediate danger, please call
+        <a :href="`tel:${emergencyNumber}`">{{ emergencyNumber }}</a>
       </text-content>
       <div class="melb-modules">
-        <a class="melb-module" @click="openContactMe()">Contact me</a>
-        <a class="melb-module">Info</a>
-        <a class="melb-module" href="tel:112">Call police</a>
-        <a class="melb-module">Shelters</a>
+        <a class="melb-module" :href="`tel:${institution.phone}`">
+          Call {{ institution.name }}<br />
+          <span class="small">{{ institution.phone }}</span>
+        </a>
+        <a class="melb-module"> Find a safe help resource </a>
+        <a
+          class="melb-module"
+          @click="
+            linkWithWarning(
+              'https://login.beranet.de/chatlight/index.php?firma_id=850&type=infochat'
+            )
+          "
+        >
+          Go to livechat
+        </a>
       </div>
     </div>
-    <div v-else class="melb-back" @click="back">&lt; Back</div>
-    <component :is="currentModule" />
+    <div v-else>
+      <div class="melb-back" @click="back">&lt; Back</div>
+      <component :is="currentModule" />
+    </div>
   </div>
 </template>
 
@@ -41,10 +69,20 @@ const back = () => {
   padding: 20px;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.small {
+  font-size: 0.8em;
+  color: #666;
+}
+
 .melb-modules {
   display: grid;
   margin: 0 -5px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .melb-module {
