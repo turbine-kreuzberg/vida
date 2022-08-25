@@ -4,6 +4,7 @@ import TextContent from '../Molecule/TextContent.vue';
 import Page from '../Organism/Module/Page.vue';
 import { IPage } from '../../types/page';
 import { IModule } from '../../types/module';
+import ScrollArea from '../Molecule/ScrollArea.vue';
 
 const emergencyNumber = '112';
 const institution = {
@@ -36,13 +37,15 @@ const pages: IPage[] = [
     title: 'The Universal Hand Signal for Help',
     content: `
       <p>here some content</p>
-      <img alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-open.png" />
-      <img alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-closed.png" />
+      <img width="70" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-open.png" />
+      <img width="70" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-closed.png" />
+      <img width="70" alt="hand closed" src="https://turbine-kreuzberg.github.io/melb/img/hand-open.png" />
     `
   },
   {
     title: 'About this widget',
-    content: 'here some content'
+    content:
+      'here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />here some content<br /><br />'
   }
 ];
 </script>
@@ -89,7 +92,9 @@ const pages: IPage[] = [
     </div>
     <div v-else>
       <div class="melb-back" @click="back">&lt; Back</div>
-      <component :is="currentModule.component" v-bind="currentModule.props" />
+      <scroll-area>
+        <component :is="currentModule.component" v-bind="currentModule.props" />
+      </scroll-area>
     </div>
   </div>
 </template>
