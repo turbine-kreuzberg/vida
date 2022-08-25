@@ -80,16 +80,15 @@ a {
 }
 
 .melb-modules {
-  display: grid;
-  margin: 0 -5px;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
 
 .melb-module {
   border: 1px solid #eee;
   border-radius: 10px;
   padding: 20px;
-  margin: 5px;
   cursor: pointer;
   text-align: center;
 
