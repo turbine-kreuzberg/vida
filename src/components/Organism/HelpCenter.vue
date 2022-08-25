@@ -38,9 +38,9 @@ const pages: IPage[] = [
       The universal "<strong>Signal for Help</strong>" is a simple one-handed sign someone can use to silently
       show they need help and want someone to check in with them in a safe way.
     </p>
-    <p>
+    <p style="text-align: center">
       <img
-        style="width: 75%; height: auto;"
+        style="display:inline-block; width: 75%; height: auto;"
         alt="hand sign"
         src="https://turbine-kreuzberg.github.io/melb/img/hand-sign.png"
       />
