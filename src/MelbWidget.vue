@@ -4,13 +4,17 @@ import Popup from './components/Molecule/Popup.vue';
 import Opener from './components/Molecule/Opener.vue';
 
 import { usePopup } from './composables/usePopup';
+import { ref } from 'vue';
 
-const { isOpen, toggle, popupRef } = usePopup();
+const { isOpen, toggle, popupRef, ignoreElementOnOutsideClick } = usePopup();
+
+const openerRef = ref(null);
+ignoreElementOnOutsideClick(openerRef);
 </script>
 
 <template>
   <div class="melb-widget">
-    <Opener @click="toggle" />
+    <Opener @click="toggle" ref="openerRef" />
     <Popup v-if="isOpen" ref="popupRef">
       <HelpCenter />
     </Popup>

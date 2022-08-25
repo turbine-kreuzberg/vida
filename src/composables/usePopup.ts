@@ -1,9 +1,11 @@
-import { ref } from 'vue';
+import { Ref, ref } from 'vue';
 import { onClickOutside, onKeyDown } from '@vueuse/core';
 
 export function usePopup() {
-  const popupRef = ref(null);
   const isOpen = ref(false);
+  const popupRef = ref(null);
+
+  const ignoredElements: Ref[] = [];
 
   function toggle() {
     isOpen.value = !isOpen.value;
@@ -13,17 +15,26 @@ export function usePopup() {
     isOpen.value = false;
   }
 
-  onClickOutside(popupRef, () => {
-    close();
-  });
+  function ignoreElementOnOutsideClick(reference: Ref) {
+    ignoredElements.push(reference);
+  }
+
+  onClickOutside(
+    popupRef,
+    () => {
+      close();
+    },
+    { ignore: ignoredElements }
+  );
 
   onKeyDown('Escape', () => {
     close();
   });
 
   return {
+    toggle,
     isOpen,
     popupRef,
-    toggle
+    ignoreElementOnOutsideClick
   };
 }
