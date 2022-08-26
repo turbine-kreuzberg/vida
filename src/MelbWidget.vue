@@ -5,17 +5,29 @@ import Opener from './components/Molecule/Opener.vue';
 
 import { usePopup } from './composables/usePopup';
 import { ref } from 'vue';
+import { IConfiguration } from './types/configuration';
 
 const { isOpen, toggle, popupRef, ignoreElementOnOutsideClick } = usePopup();
 
 const openerRef = ref(null);
 ignoreElementOnOutsideClick(openerRef);
+
+// @ts-ignore
+const configuration: IConfiguration = window.breakout;
+
+const renderBadge =
+  typeof configuration.renderBadge === 'undefined' ? true : configuration.renderBadge;
+
+// @ts-ignore
+window.startBreakout = () => {
+  toggle();
+};
 </script>
 
 <template>
   <div class="melb-widget">
-    <Opener @click="toggle" ref="openerRef" />
-    <Popup v-if="isOpen" ref="popupRef">
+    <Opener @click="toggle" ref="openerRef" v-if="renderBadge" />
+    <Popup v-if="isOpen" ref="popupRef" :position="'centered'">
       <HelpCenter />
     </Popup>
   </div>
