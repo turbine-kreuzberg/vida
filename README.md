@@ -67,3 +67,23 @@ each country. Please choose a snipped based on the ngo and country that fits you
 <script type="module" crossorigin src="https://turbine-kreuzberg.github.io/melb/code.js"></script>
 <link rel="stylesheet" href="https://turbine-kreuzberg.github.io/melb/style.css">
 ```
+
+### Open breakout from anywhere
+
+You can open breakout from anywhere. You do not need to add it as a fixed badge on your page.
+
+```html
+<a href="#" onclick="startBreakout(); return false">Open popup</a>
+```
+
+In order to deactivate the badge you need to add `renderBadge: false` to your breakout configuration:
+
+```html
+<script type="text/javascript">
+  window.breakout = {
+    // ...
+    renderBadge: false
+    // ...
+  }
+</script>
+```
