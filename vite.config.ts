@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+
+// @ts-ignore
 import purgecss from 'rollup-plugin-purgecss';
 
 export default defineConfig({

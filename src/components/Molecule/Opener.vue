@@ -1,20 +1,28 @@
-<template>
-  <div class="opener" :class="position">Help</div>
-</template>
-<script setup lang="ts">
+<script lang="ts" setup>
+import HandClosed from './../Svg/HandClosed.vue';
+import HandOpen from '../Svg/HandOpen.vue';
+import { ref } from 'vue';
+
 defineProps<{
   position: string;
 }>();
+
+const isHover = ref<boolean>(false);
 </script>
+<template>
+  <div class="opener" :class="position" @mouseenter="isHover = true" @mouseleave="isHover = false">
+    <hand-closed v-if="isHover" />
+    <hand-open v-else />
+  </div>
+</template>
 <style lang="scss" scoped>
 .opener {
   position: fixed;
-  border-radius: 100px;
-  width: 50px;
-  height: 50px;
-  background: red;
+  bottom: 10px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
   text-align: center;
-  padding-top: 17px;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;

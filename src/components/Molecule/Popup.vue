@@ -12,7 +12,7 @@ defineProps<{
 .melb-popup {
   position: fixed;
   right: 10px;
-  bottom: 70px;
+  bottom: 100px;
   width: 400px;
   z-index: 1000;
   background: #fff;
