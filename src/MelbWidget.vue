@@ -22,8 +22,15 @@ const widgetPosition = configuration.widgetPosition
   ? configuration.widgetPosition
   : 'bottom-right';
 
+const forceCenteredPopup = ref<boolean>(false);
+
 // @ts-ignore
 window.startBreakout = () => {
+  openClose(true);
+};
+
+const openClose = (centered?: boolean) => {
+  forceCenteredPopup.value = !!centered;
   toggle();
 };
 </script>
@@ -31,12 +38,16 @@ window.startBreakout = () => {
 <template>
   <div class="melb-widget">
     <Opener
-      @click="toggle"
+      @click="openClose()"
       ref="openerRef"
       v-if="renderBadge"
       :position="widgetPosition"
     />
-    <Popup v-if="isOpen" ref="popupRef" :position="'centered'">
+    <Popup
+      v-if="isOpen"
+      ref="popupRef"
+      :position="forceCenteredPopup ? 'centered' : null"
+    >
       <HelpCenter />
     </Popup>
   </div>
