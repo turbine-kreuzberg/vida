@@ -18,6 +18,10 @@ const configuration: IConfiguration = window.breakout;
 const renderBadge =
   typeof configuration.renderBadge === 'undefined' ? true : configuration.renderBadge;
 
+const widgetPosition = configuration.widgetPosition
+  ? configuration.widgetPosition
+  : 'bottom-right';
+
 // @ts-ignore
 window.startBreakout = () => {
   toggle();
@@ -26,7 +30,12 @@ window.startBreakout = () => {
 
 <template>
   <div class="melb-widget">
-    <Opener @click="toggle" ref="openerRef" v-if="renderBadge" />
+    <Opener
+      @click="toggle"
+      ref="openerRef"
+      v-if="renderBadge"
+      :position="widgetPosition"
+    />
     <Popup v-if="isOpen" ref="popupRef" :position="'centered'">
       <HelpCenter />
     </Popup>
