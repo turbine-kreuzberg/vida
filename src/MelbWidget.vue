@@ -10,12 +10,17 @@ const { isOpen, toggle, popupRef, ignoreElementOnOutsideClick } = usePopup();
 
 const openerRef = ref(null);
 ignoreElementOnOutsideClick(openerRef);
+
+// @ts-ignore
+window.startBreakout = () => {
+  toggle();
+};
 </script>
 
 <template>
   <div class="melb-widget">
     <Opener @click="toggle" ref="openerRef" />
-    <Popup v-if="isOpen" ref="popupRef">
+    <Popup v-if="isOpen" ref="popupRef" :position="'centered'">
       <HelpCenter />
     </Popup>
   </div>
