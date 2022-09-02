@@ -1,4 +1,4 @@
-export interface IPage {
+export interface IContentPage {
   title: string;
   content: string;
 }

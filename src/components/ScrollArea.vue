@@ -1,12 +1,14 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const props = defineProps<{
   maxHeight?: string;
 }>();
 
-const maxHeights = props.maxHeight || '90vh';
+const finalMaxHeight = ref(props.maxHeight || '90vh');
 </script>
 <template>
-  <div class="melb-scroll-area" :style="{ maxHeight: maxHeight }">
+  <div class="melb-scroll-area" :style="{ maxHeight: finalMaxHeight }">
     <slot />
   </div>
 </template>
