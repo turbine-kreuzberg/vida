@@ -14,76 +14,37 @@ each country. Please choose a snipped based on the ngo and country that fits you
 
 ```html
 
-<script type="text/javascript">
-  window.breakout = {
-    language: 'en',
-    emergencyNumber: '110',
-    institution: {
-      name: 'Hilfetelefon',
-      phone: '08000116016',
-      information: "<p>Das Hilfetelefon \"Gewalt gegen Frauen\" ist ein bundesweites Beratungsangebot für Frauen, die Gewalt erlebt haben oder noch erleben. Unter der Nummer 08000 116 016 und via Online-Beratung unterstützen wir Betroffene aller Nationalitäten, mit und ohne Behinderung – 365 Tage im Jahr, rund um die Uhr. Auch Angehörige, Freundinnen und Freunde sowie Fachkräfte beraten wir anonym und kostenfrei.</p>",
-      chat: 'https://login.beranet.de/chatlight/index.php?firma_id=850&type=infochat'
-    }
-  }
-</script>
 <script type="module" crossorigin src="https://turbine-kreuzberg.github.io/melb/code.js"></script>
 <link rel="stylesheet" href="https://turbine-kreuzberg.github.io/melb/style.css">
-```
-
-### Kirghistan & ...
-
-```html
-
 <script type="text/javascript">
-  window.breakout = {
-    language: 'en',
-    emergencyNumber: '110',
-    institution: {
-      name: 'Hilfetelefon',
-      phone: '08000116016',
-      information: "<p>Das Hilfetelefon \"Gewalt gegen Frauen\" ist ein bundesweites Beratungsangebot für Frauen, die Gewalt erlebt haben oder noch erleben. Unter der Nummer 08000 116 016 und via Online-Beratung unterstützen wir Betroffene aller Nationalitäten, mit und ohne Behinderung – 365 Tage im Jahr, rund um die Uhr. Auch Angehörige, Freundinnen und Freunde sowie Fachkräfte beraten wir anonym und kostenfrei.</p>"
-    }
-  }
+  window.addEventListener('breakout-loaded', function (e) {
+    window.breakout = e.detail
+    window.breakout.init({
+      language: 'en',
+      emergencyNumber: '110',
+      institution: {
+        name: 'Hilfetelefon',
+        phone: '08000116016',
+        information: "<p>Das Hilfetelefon \"Gewalt gegen Frauen\" ist ein bundesweites Beratungsangebot für Frauen, die Gewalt erlebt haben oder noch erleben. Unter der Nummer 08000 116 016 und via Online-Beratung unterstützen wir Betroffene aller Nationalitäten, mit und ohne Behinderung – 365 Tage im Jahr, rund um die Uhr. Auch Angehörige, Freundinnen und Freunde sowie Fachkräfte beraten wir anonym und kostenfrei.</p>",
+        chat: 'https://login.beranet.de/chatlight/index.php?firma_id=850&type=infochat'
+      },
+      widget: {
+        showHand: true,
+        position: 'bottom-right'
+      },
+    })
+  })
 </script>
-<script type="module" crossorigin src="https://turbine-kreuzberg.github.io/melb/code.js"></script>
-<link rel="stylesheet" href="https://turbine-kreuzberg.github.io/melb/style.css">
 ```
 
-### Portugal & ...
+## Portugal & ...
 
-```html
-
-<script type="text/javascript">
-  window.breakout = {
-    language: 'en',
-    emergencyNumber: '110',
-    institution: {
-      name: 'Hilfetelefon',
-      phone: '08000116016',
-      information: "<p>Das Hilfetelefon \"Gewalt gegen Frauen\" ist ein bundesweites Beratungsangebot für Frauen, die Gewalt erlebt haben oder noch erleben. Unter der Nummer 08000 116 016 und via Online-Beratung unterstützen wir Betroffene aller Nationalitäten, mit und ohne Behinderung – 365 Tage im Jahr, rund um die Uhr. Auch Angehörige, Freundinnen und Freunde sowie Fachkräfte beraten wir anonym und kostenfrei.</p>"
-    }
-  }
-</script>
-<script type="module" crossorigin src="https://turbine-kreuzberg.github.io/melb/code.js"></script>
-<link rel="stylesheet" href="https://turbine-kreuzberg.github.io/melb/style.css">
-```
+...
 
 ### Open breakout from anywhere
 
 You can open breakout from anywhere. You do not need to add it as a fixed badge on your page.
 
 ```html
-<a href="#" onclick="startBreakout(); return false">Open popup</a>
-```
-
-In order to deactivate the badge you need to add `renderBadge: false` to your breakout configuration:
-
-```html
-<script type="text/javascript">
-  window.breakout = {
-    // ...
-    renderBadge: false
-    // ...
-  }
-</script>
+<a href="#" onclick="window.breakout.open(); return false;">Open popup</a>
 ```
