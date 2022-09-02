@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
-import App from './MelbWidget.vue';
+import App from './App.vue';
 
-const melbWidget = document.createElement('div');
-document.body.append(melbWidget);
+const app = document.createElement('div');
+document.body.append(app);
 
-createApp(App).mount(melbWidget);
+createApp(App).mount(app);

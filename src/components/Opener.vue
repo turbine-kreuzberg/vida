@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import HandClosed from './../Svg/HandClosed.vue';
-import HandOpen from '../Svg/HandOpen.vue';
+import HandClosed from './Svg/HandClosed.vue';
+import HandOpen from './Svg/HandOpen.vue';
 import { ref } from 'vue';
 
 defineProps<{
@@ -10,7 +10,12 @@ defineProps<{
 const isHover = ref<boolean>(false);
 </script>
 <template>
-  <div class="opener" :class="position" @mouseenter="isHover = true" @mouseleave="isHover = false">
+  <div
+    class="opener"
+    :class="position"
+    @mouseenter="isHover = true"
+    @mouseleave="isHover = false"
+  >
     <hand-closed v-if="isHover" />
     <hand-open v-else />
   </div>
@@ -18,8 +23,10 @@ const isHover = ref<boolean>(false);
 <style lang="scss" scoped>
 .opener {
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
   width: 80px;
   height: 80px;
   text-align: center;
@@ -47,6 +54,12 @@ const isHover = ref<boolean>(false);
   &.bottom-right {
     bottom: 10px;
     right: 10px;
+  }
+
+  &.centered {
+    bottom: 10px;
+    left: 50%;
+    margin-left: -40px;
   }
 }
 </style>
