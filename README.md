@@ -37,9 +37,31 @@ each country. Please choose a snipped based on the ngo and country that fits you
 </script>
 ```
 
-## Portugal & ...
+## Portugal & APAV
 
-...
+```html
+
+<script type="module" src="/src/main.ts"></script>
+<script type="text/javascript">
+  window.addEventListener('breakout-loaded', function (e) {
+    window.breakout = e.detail
+    window.breakout.init({
+      language: 'en',
+      emergencyNumber: '112',
+      institution: {
+        name: 'APAV',
+        phone: '116006',
+        information: "<p>A APAV apoia pessoas vítimas de crime, seus familiares e amigos, de forma gratuita e confidencial.\n</p><p>Oferecemos um apoio prático, psicológico, jurídico e social. Os/as nossos/as Técnicos/as de Apoio à Vítima são especializados no apoio a pessoas que foram ou são vítimas de algum tipo de crime e estão disponíveis para o ouvir, garantindo a confidencialidade e o respeito pela sua autonomia.</p>",
+        chat: 'https://www.facebook.com/APAV.Portugal/'
+      },
+      widget: {
+        showHand: true,
+        position: 'bottom-right'
+      },
+    })
+  })
+</script>
+```
 
 ### Open breakout from anywhere
 
