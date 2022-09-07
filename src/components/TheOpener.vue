@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import HandClosed from './Svg/HandClosed.vue';
-import HandOpen from './Svg/HandOpen.vue';
+import TheHandClosed from './Svg/TheHandClosed.vue';
+import TheHandOpen from './Svg/TheHandOpen.vue';
 import { ref } from 'vue';
 
 defineProps<{
@@ -11,17 +11,17 @@ const isHover = ref<boolean>(false);
 </script>
 <template>
   <div
-    class="opener"
+    class="the-opener"
     :class="position"
     @mouseenter="isHover = true"
     @mouseleave="isHover = false"
   >
-    <hand-closed v-if="isHover" />
-    <hand-open v-else />
+    <the-hand-closed v-if="isHover" />
+    <the-hand-open v-else />
   </div>
 </template>
 <style lang="scss" scoped>
-.opener {
+.the-opener {
   position: fixed;
   top: auto;
   left: auto;

@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 <template>
   <div
-    class="melb-text-content"
+    class="the-text-content"
     :class="{
       important: props.important,
       centered: props.centered,
@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<Props>(), {
   </div>
 </template>
 <style lang="scss" scoped>
-.melb-text-content {
+.the-text-content {
   font-size: 0.9em;
   line-height: 1.7em;
   margin-bottom: 20px;

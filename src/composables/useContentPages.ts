@@ -23,7 +23,7 @@ export function useContentPages() {
       <img
         style="display:inline-block; width: 75%; height: auto;"
         alt="hand sign"
-        src="https://turbine-kreuzberg.github.io/melb/img/hand-sign.png"
+        src="https://turbine-kreuzberg.github.io/vida/img/hand-sign.png"
       />
     </p>
     <p>This can be used in a video call or video post, in a public place, etc.</p>
@@ -55,7 +55,7 @@ export function useContentPages() {
       content: `
       <h3>How can I host this widget on my site?</h3>
       <p>
-        Go to <a href="https://github.com/turbine-kreuzberg/melb#readme">breakout git repository</a>
+        Go to <a href="https://github.com/turbine-kreuzberg/vida#readme">breakout git repository</a>
         to copy and paste a widget for your region and institution (ngo).
       </p>
     `

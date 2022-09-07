@@ -4,10 +4,10 @@ const props = defineProps<{
 }>();
 </script>
 <template>
-  <div class="melb-headline" v-html="props.label" />
+  <div class="the-headline" v-html="props.label" />
 </template>
 <style lang="scss" scoped>
-.melb-headline {
+.the-headline {
   font-size: 1.2em;
   margin-bottom: 20px;
   font-weight: bold;

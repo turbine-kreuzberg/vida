@@ -8,10 +8,10 @@ const back = () => {
 };
 </script>
 <template>
-  <div class="melb-back" @click="back">&lt; Back</div>
+  <div class="the-back" @click="back">&lt; Back</div>
 </template>
 <style scoped lang="scss">
-.melb-back {
+.the-back {
   border-bottom: 1px solid #eee;
   padding: 0 0 10px 0;
   margin-bottom: 20px;
