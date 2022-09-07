@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelpCenter from './components/HelpCenter.vue';
-import Popup from './components/Popup.vue';
-import Opener from './components/Opener.vue';
+import TheHelpCenter from './components/TheHelpCenter.vue';
+import ThePopup from './components/ThePopup.vue';
+import TheOpener from './components/TheOpener.vue';
 import { useApp } from './composables/useApp';
 import { onMounted, ref } from 'vue';
 import { onClickOutside, onKeyDown } from '@vueuse/core';
@@ -20,21 +20,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="melb-app" v-if="configuration">
-    <Opener
-      ref="opener"
-      @click="!isOpen ? open() : close()"
+  <div v-if="configuration" class="the-app">
+    <TheOpener
       v-if="showHand"
+      ref="opener"
       :position="position"
+      @click="!isOpen ? open() : close()"
     />
-    <Popup v-if="isOpen" ref="popup" :position="position">
-      <HelpCenter />
-    </Popup>
+    <ThePopup v-if="isOpen" ref="popup" :position="position">
+      <TheHelpCenter />
+    </ThePopup>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.melb-app {
+.the-app {
   font-family: arial, sans-serif;
   font-size: 16px;
   line-height: 1;

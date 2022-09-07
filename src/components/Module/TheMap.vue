@@ -1,5 +1,5 @@
 <template>
-  <div id="melb-map" v-if="hasAccessToLocation">
+  <div v-if="hasAccessToLocation" id="the-map">
     <l-map style="height: 100%; width: 100%" :zoom="14" :center="center">
       <l-tile-layer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -41,7 +41,7 @@ onMounted(() => {
 });
 </script>
 <style lang="scss" scoped>
-#melb-map {
+#the-map {
   height: 400px;
 }
 </style>

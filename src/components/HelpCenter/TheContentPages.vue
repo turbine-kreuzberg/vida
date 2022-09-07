@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { IContentPage } from '../../types/content-page';
-import ContentPage from '../Module/ContentPage.vue';
+import TheContentPage from '../Module/TheContentPage.vue';
 import { useApp } from '../../composables/useApp';
 import { useContentPages } from '../../composables/useContentPages';
 
@@ -10,14 +10,14 @@ const { contentPages } = useContentPages();
 
 const openContentPage = (contentPage: IContentPage) => {
   currentModule.value = {
-    component: ContentPage,
+    component: TheContentPage,
     props: { contentPage }
   };
 };
 </script>
 <template>
-  <div class="melb-content-pages">
-    <div v-for="contentPage in contentPages">
+  <div class="the-content-pages">
+    <div v-for="contentPage in contentPages" :key="contentPage.title">
       <a href="#" @click.prevent="openContentPage(contentPage)">
         {{ contentPage.title }}
       </a>
@@ -25,7 +25,7 @@ const openContentPage = (contentPage: IContentPage) => {
   </div>
 </template>
 <style scoped lang="scss">
-.melb-content-pages {
+.the-content-pages {
   display: flex;
   flex-direction: column;
   row-gap: 20px;

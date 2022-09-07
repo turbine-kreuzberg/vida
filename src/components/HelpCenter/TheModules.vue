@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useApp } from '../../composables/useApp';
-import Map from '../Module/Map.vue';
+import TheMap from '../Module/TheMap.vue';
 import { useSafeLink } from '../../composables/useSafeLink';
 
 const { configuration, currentModule } = useApp();
@@ -8,20 +8,20 @@ const { safeLink } = useSafeLink();
 
 const openSafePlaces = () => {
   currentModule.value = {
-    component: Map
+    component: TheMap
   };
 };
 </script>
 <template>
-  <div class="melb-modules">
-    <a class="melb-module" :href="`tel:${configuration.institution.phone}`">
+  <div class="the-modules">
+    <a class="the-module" :href="`tel:${configuration.institution.phone}`">
       Call {{ configuration.institution.name }}<br />
-      <span class="melb-small">{{ configuration.institution.phone }}</span>
+      <span class="the-small">{{ configuration.institution.phone }}</span>
     </a>
-    <a class="melb-module" @click="openSafePlaces()"> Find a safe help resource </a>
+    <a class="the-module" @click="openSafePlaces()"> Find a safe help resource </a>
     <a
       v-if="configuration.institution.chat"
-      class="melb-module"
+      class="the-module"
       @click="safeLink(configuration.institution.chat)"
     >
       Go to livechat
@@ -34,19 +34,19 @@ a {
   text-decoration: none;
 }
 
-.melb-small {
+.the-small {
   font-size: 0.8em;
   color: #666;
 }
 
-.melb-modules {
+.the-modules {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   margin-bottom: 40px;
 }
 
-.melb-module {
+.the-module {
   border: 1px solid #eee;
   border-radius: 10px;
   padding: 20px;

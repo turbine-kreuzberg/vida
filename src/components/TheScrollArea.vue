@@ -5,15 +5,17 @@ const props = defineProps<{
   maxHeight?: string;
 }>();
 
-const finalMaxHeight = ref(props.maxHeight || '90vh');
+const style = ref<{ [key: string]: string | undefined | null | number }>({
+  maxHeight: props.maxHeight
+});
 </script>
 <template>
-  <div class="melb-scroll-area" :style="{ maxHeight: finalMaxHeight }">
+  <div class="the-scroll-area" :style="style">
     <slot />
   </div>
 </template>
 <style lang="scss">
-.melb-scroll-area {
+.the-scroll-area {
   max-height: 400px;
   overflow: auto;
 }

@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-defineProps<{
+const props = defineProps<{
   position: string;
 }>();
 </script>
 <template>
-  <div class="melb-popup" :class="`melb-popup-${position}`">
+  <div class="the-popup" :class="`the-popup-${props.position}`">
     <slot />
   </div>
 </template>
 <style scoped lang="scss">
-.melb-popup {
+.the-popup {
   position: fixed;
   top: auto;
   left: auto;
