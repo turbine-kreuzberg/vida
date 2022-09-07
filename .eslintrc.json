@@ -2,10 +2,32 @@
     "env": {
         "node": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:vue/vue3-recommended",
-        "prettier"
+    "plugins": [
+        "@typescript-eslint"
     ],
-    "rules": {}
+    "extends": [
+
+        "plugin:vue/vue3-recommended",
+        "eslint:recommended",
+        "@vue/typescript/recommended",
+        // Add under other rules
+        "@vue/prettier"
+
+//        "plugin:@typescript-eslint/recommended",
+//        "plugin:@typescript-eslint/eslint-recommended",
+//        "eslint:recommended",
+//        "plugin:vue/vue3-recommended",
+//        "prettier"
+
+//        "eslint:recommended",
+//        "plugin:vue/vue3-recommended",
+//        "plugin:@typescript-eslint/eslint-recommended",
+//        "plugin:@typescript-eslint/recommended",
+//        "prettier"
+    ],
+    "rules": {
+        "vue/no-v-html": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-undef": "off"
+    }
 }
