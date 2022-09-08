@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore --fix src"
   },
   "dependencies": {
-    "vue": "3.2.38"
+    "vue": "3.2.39"
   },
   "devDependencies": {
     "@types/leaflet": "1.7.11",
