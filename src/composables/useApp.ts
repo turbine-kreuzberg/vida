@@ -42,7 +42,7 @@ export function useApp() {
 
   const dispatchLoaded = () => {
     window.dispatchEvent(
-      new CustomEvent('breakout-loaded', {
+      new CustomEvent('vida-loaded', {
         detail: { init, configure, open, close }
       })
     );
