@@ -5,3 +5,8 @@ declare module '*.vue' {
   const component: DefineComponent<Record<string, unknown>, Record<string, unknown>, any>;
   export default component;
 }
+
+declare module '@vue-leaflet/vue-leaflet' {
+  export const LMap: any;
+  export const LTileLayer: any;
+}
