@@ -8,10 +8,8 @@ const { configuration } = useApp();
 const number = ref(configuration.value?.emergencyNumber);
 </script>
 <template>
-  <the-headline
-    v-if="number"
-    :label="`
-      If you or someone you know is in immediate danger, please call: <a href='tel:${number}'>${number}</a>
-    `"
-  />
+  <the-headline v-if="number">
+    If you or someone you know is in immediate danger, please call:
+    <a :href="`tel:${number}`">{{ number }}</a>
+  </the-headline>
 </template>

@@ -8,7 +8,9 @@ const props = defineProps<{
 }>();
 </script>
 <template>
-  <the-headline :label="props.contentPage.title" />
+  <the-headline>
+    {{ props.contentPage.title }}
+  </the-headline>
   <the-text-content>
     <div v-html="props.contentPage.content" />
   </the-text-content>

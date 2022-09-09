@@ -1,10 +1,7 @@
-<script lang="ts" setup>
-const props = defineProps<{
-  label: string;
-}>();
-</script>
 <template>
-  <div class="the-headline" v-html="props.label" />
+  <div class="the-headline">
+    <slot />
+  </div>
 </template>
 <style lang="scss" scoped>
 .the-headline {
