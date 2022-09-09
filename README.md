@@ -20,7 +20,7 @@ each country. Please choose a snipped based on the ngo and country that fits you
   window.addEventListener('breakout-loaded', function (e) {
     window.breakout = e.detail
     window.breakout.init({
-      language: 'en',
+      language: 'de',
       emergencyNumber: '110',
       institution: {
         name: 'Hilfetelefon',
@@ -47,7 +47,7 @@ each country. Please choose a snipped based on the ngo and country that fits you
   window.addEventListener('breakout-loaded', function (e) {
     window.breakout = e.detail
     window.breakout.init({
-      language: 'en',
+      language: 'pt',
       emergencyNumber: '112',
       institution: {
         name: 'APAV',

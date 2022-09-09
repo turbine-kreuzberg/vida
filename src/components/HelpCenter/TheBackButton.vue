@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { useApp } from '../../composables/useApp';
+import { useI18n } from 'vue-i18n';
 
+const { t } = useI18n();
 const { currentModule } = useApp();
 
 const back = () => {
@@ -8,7 +10,7 @@ const back = () => {
 };
 </script>
 <template>
-  <div class="the-back" @click="back">&lt; Back</div>
+  <div class="the-back" @click="back">&lt; {{ t('back') }}</div>
 </template>
 <style scoped lang="scss">
 .the-back {
