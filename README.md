@@ -17,9 +17,9 @@ each country. Please choose a snipped based on the ngo and country that fits you
 <script type="module" crossorigin src="https://turbine-kreuzberg.github.io/vida/code.js"></script>
 <link rel="stylesheet" href="https://turbine-kreuzberg.github.io/vida/style.css">
 <script type="text/javascript">
-  window.addEventListener('breakout-loaded', function (e) {
-    window.breakout = e.detail
-    window.breakout.init({
+  window.addEventListener('vida-loaded', function (e) {
+    window.vida = e.detail
+    window.vida.init({
       language: 'de',
       emergencyNumber: '110',
       institution: {
@@ -44,9 +44,9 @@ each country. Please choose a snipped based on the ngo and country that fits you
 <script type="module" crossorigin src="https://turbine-kreuzberg.github.io/vida/code.js"></script>
 <link rel="stylesheet" href="https://turbine-kreuzberg.github.io/vida/style.css">
 <script type="text/javascript">
-  window.addEventListener('breakout-loaded', function (e) {
-    window.breakout = e.detail
-    window.breakout.init({
+  window.addEventListener('vida-loaded', function (e) {
+    window.vida = e.detail
+    window.vida.init({
       language: 'pt',
       emergencyNumber: '112',
       institution: {
@@ -69,5 +69,5 @@ each country. Please choose a snipped based on the ngo and country that fits you
 You can open breakout from anywhere. You do not need to add it as a fixed badge on your page.
 
 ```html
-<a href="#" onclick="window.breakout.open(); return false;">Open popup</a>
+<a href="#" onclick="window.vida.open(); return false;">Open popup</a>
 ```
