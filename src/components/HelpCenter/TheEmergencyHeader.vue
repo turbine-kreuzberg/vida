@@ -2,14 +2,15 @@
 import { useApp } from '../../composables/useApp';
 import TheHeadline from '../TheHeadline.vue';
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
+const { t } = useI18n();
 const { configuration } = useApp();
 
-const number = ref(configuration.value?.emergencyNumber);
+const emergencyNumber = ref(configuration.value?.emergencyNumber);
 </script>
 <template>
-  <the-headline v-if="number">
-    If you or someone you know is in immediate danger, please call:
-    <a :href="`tel:${number}`">{{ number }}</a>
+  <the-headline v-if="emergencyNumber">
+    <div v-html="t('index.vida_emergency_header', { emergencyNumber })" />
   </the-headline>
 </template>

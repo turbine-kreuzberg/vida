@@ -2,7 +2,9 @@
 import { useApp } from '../../composables/useApp';
 import TheMap from '../Module/TheMap.vue';
 import { useSafeLink } from '../../composables/useSafeLink';
+import { useI18n } from 'vue-i18n';
 
+const { t } = useI18n();
 const { configuration, currentModule } = useApp();
 const { safeLink } = useSafeLink();
 
@@ -15,16 +17,18 @@ const openSafePlaces = () => {
 <template>
   <div class="the-modules">
     <a class="the-module" :href="`tel:${configuration.institution.phone}`">
-      Call {{ configuration.institution.name }}<br />
+      {{ t('call_institution', { institution: configuration.institution.name }) }}<br />
       <span class="the-small">{{ configuration.institution.phone }}</span>
     </a>
-    <a class="the-module" @click="openSafePlaces()"> Find a safe help resource </a>
+    <a class="the-module" @click="openSafePlaces()">
+      {{ t('find_a_safe_help_resource') }}
+    </a>
     <a
       v-if="configuration.institution.chat"
       class="the-module"
       @click="safeLink(configuration.institution.chat)"
     >
-      Go to livechat
+      {{ t('go_to_live_chat') }}
     </a>
   </div>
 </template>

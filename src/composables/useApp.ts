@@ -1,6 +1,7 @@
 import { computed, ref, shallowRef } from 'vue';
 import { IConfiguration } from '../types/configuration';
 import { IModule } from '../types/module';
+import { useI18n } from 'vue-i18n';
 
 // Global state
 const isOpen = ref<boolean>(false);
@@ -19,12 +20,15 @@ const showHand = computed((): boolean => {
 });
 
 export function useApp() {
+  const { locale } = useI18n();
+
   const init = (configurationParameter: IConfiguration) => {
-    configuration.value = configurationParameter;
+    configure(configurationParameter);
   };
 
   const configure = (configurationParameter: IConfiguration) => {
     configuration.value = configurationParameter;
+    locale.value = configuration.value.language || 'en';
   };
 
   const open = () => {
