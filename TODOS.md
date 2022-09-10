@@ -1,5 +1,6 @@
 # Todos
 
+- [ ] Make TheHelpCenter entry point component asynchronously loaded (chunk)
 - [x] Big and contrast-ful close-button.
 - [ ] Have content page images with relative paths
 - [ ] Introduce markers and headline for safe-places map
