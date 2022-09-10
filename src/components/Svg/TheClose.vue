@@ -1,4 +1,4 @@
-<!--suppress HtmlUnknownTag, HtmlUnknownAttribute -->
+<!--suppress HtmlUnknownTag, HtmlUnknownAttribute, RequiredAttributes -->
 <script lang="ts" setup>
 const props = defineProps<{
   width?: string;
@@ -20,6 +20,7 @@ const props = defineProps<{
   >
     <defs id="defs4" />
     <sodipodi:namedview
+      v-pre
       id="base"
       pagecolor="#00ffff"
       bordercolor="#006666"
@@ -42,10 +43,10 @@ const props = defineProps<{
       inkscape:window-y="46"
     />
     <metadata id="metadata7">
-      <rdf:RDF>
-        <cc:Work rdf:about="">
-          <dc:format>image/svg+xml</dc:format>
-          <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      <rdf:RDF v-pre>
+        <cc:Work v-pre rdf:about="">
+          <dc:format v-pre>image/svg+xml</dc:format>
+          <dc:type v-pre rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
         </cc:Work>
       </rdf:RDF>
     </metadata>
