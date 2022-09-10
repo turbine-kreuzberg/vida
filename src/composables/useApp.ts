@@ -6,7 +6,7 @@ import { useI18n } from 'vue-i18n';
 // Global state
 const isOpen = ref<boolean>(false);
 const configuration = ref<IConfiguration | null>(null);
-const currentModule = shallowRef<IModule | null>();
+const currentModule = shallowRef<IModule | null>(null);
 
 // Global computed state
 const position = computed((): string => {
