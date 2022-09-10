@@ -25,11 +25,10 @@ export default defineConfig({
     })
   ],
   build: {
-    cssCodeSplit: false,
     rollupOptions: {
       output: {
         assetFileNames: '[name].[ext]',
-        entryFileNames: 'code.js'
+        entryFileNames: 'index.js'
       }
     }
   }
