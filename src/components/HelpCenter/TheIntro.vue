@@ -6,6 +6,6 @@ const { t } = useI18n();
 </script>
 <template>
   <the-text-content :small="true">
-    <div v-html="t('index.vida_intro')" />
+    <div v-html="t('index.widget_description')" />
   </the-text-content>
 </template>
