@@ -11,6 +11,6 @@ const emergencyNumber = ref(configuration.value?.emergencyNumber);
 </script>
 <template>
   <the-headline v-if="emergencyNumber">
-    <div v-html="t('index.vida_emergency_header', { emergencyNumber })" />
+    <div v-html="t('index.emergency_header', { emergencyNumber })" />
   </the-headline>
 </template>
