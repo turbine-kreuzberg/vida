@@ -3,9 +3,11 @@
 import { IContentPage } from '../types/content-page';
 import { ref } from 'vue';
 import { useApp } from './useApp';
+import { useBaseUrl } from './useBaseUrl';
 
 export function useContentPages() {
   const { configuration } = useApp();
+  const { replacePublicPaths } = useBaseUrl();
 
   if (!configuration.value) {
     throw new Error(
@@ -65,11 +67,10 @@ export function useContentPages() {
 
   // We replace content @public with our scripts basepath
   const processedContentPages = ref(
-    contentPages.value.map((contentPage) =>
-      Object.assign({}, contentPage, {
-        content: contentPage.content
-          .split('@public/')
-          .join(new URL('/', import.meta.url).href)
+    contentPages.value.map(
+      (contentPage): IContentPage => ({
+        title: contentPage.title,
+        content: replacePublicPaths(contentPage.content)
       })
     )
   );
