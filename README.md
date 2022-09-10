@@ -14,8 +14,8 @@ each country. Please choose a snipped based on the ngo and country that fits you
 
 ```html
 
-<script type="module" crossorigin src="https://turbine-kreuzberg.github.io/vida/code.js"></script>
-<link rel="stylesheet" href="https://turbine-kreuzberg.github.io/vida/style.css">
+<script type="module" crossorigin src="https://turbine-kreuzberg.github.io/vida/index.js"></script>
+<link rel="stylesheet" href="https://turbine-kreuzberg.github.io/vida/index.css">
 <script type="text/javascript">
   window.addEventListener('vida-loaded', function (e) {
     window.vida = e.detail
@@ -41,8 +41,8 @@ each country. Please choose a snipped based on the ngo and country that fits you
 
 ```html
 
-<script type="module" crossorigin src="https://turbine-kreuzberg.github.io/vida/code.js"></script>
-<link rel="stylesheet" href="https://turbine-kreuzberg.github.io/vida/style.css">
+<script type="module" crossorigin src="https://turbine-kreuzberg.github.io/vida/index.js"></script>
+<link rel="stylesheet" href="https://turbine-kreuzberg.github.io/vida/index.css">
 <script type="text/javascript">
   window.addEventListener('vida-loaded', function (e) {
     window.vida = e.detail
