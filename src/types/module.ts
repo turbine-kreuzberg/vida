@@ -1,4 +1,6 @@
+import { DefineComponent } from 'vue';
+
 export interface IModule {
-  component: any;
+  component: DefineComponent;
   props?: { [key: string]: any };
 }
