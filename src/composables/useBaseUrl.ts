@@ -5,7 +5,7 @@ const script = document.getElementById('vida-script');
 
 baseUrl.value =
   script instanceof HTMLScriptElement
-    ? script.src.split('/').slice(0, -1).join('/')
+    ? script.src.split('/').slice(0, -1).join('/') + '/'
     : '/';
 
 export function useBaseUrl() {
