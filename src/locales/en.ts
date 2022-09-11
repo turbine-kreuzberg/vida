@@ -65,12 +65,12 @@ export default {
           The universal "<strong>Signal for Help</strong>" is a simple one-handed sign someone can use to silently
           show they need help and want someone to check in with them in a safe way.
         </p>
-        <p style="text-align: center">
+        <div style="text-align: center">
           <img 
-            style="display:inline-block; width: 75%; height: auto;" 
+            style="display:inline-block; width: 75%; height: auto;"
             alt="hand sign" 
-            src="@public/img/hand-sign.png" />
-        </p>
+            src="__public/img/hand-sign.png" />
+        </div>
         <p>This can be used in a video call or video post, in a public place, etc.</p>
       `
     },

@@ -18,7 +18,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - run: yarn
-      - run: yarn build
+      - run: VITE_BASE=/vida/ yarn build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.0
