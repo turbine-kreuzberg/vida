@@ -12,18 +12,18 @@ const { currentModule } = useApp();
 
 <template>
   <div class="the-help-center">
-    <div v-if="!currentModule">
-      <the-intro />
-      <the-emergency-header />
-      <the-modules />
-      <the-content-pages />
-    </div>
-    <div v-else>
-      <the-back-button />
-      <the-scroll-area>
+    <the-back-button v-if="currentModule" />
+    <the-scroll-area>
+      <div v-if="!currentModule">
+        <the-intro />
+        <the-emergency-header />
+        <the-modules />
+        <the-content-pages />
+      </div>
+      <div v-else>
         <component :is="currentModule.component" v-bind="currentModule.props" />
-      </the-scroll-area>
-    </div>
+      </div>
+    </the-scroll-area>
   </div>
 </template>
 

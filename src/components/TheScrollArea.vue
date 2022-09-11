@@ -6,7 +6,7 @@ const props = defineProps<{
 }>();
 
 const style = ref<{ [key: string]: string | undefined | null | number }>({
-  maxHeight: props.maxHeight
+  maxHeight: props.maxHeight || 'calc(100vh - 220px)'
 });
 </script>
 <template>
@@ -16,7 +16,6 @@ const style = ref<{ [key: string]: string | undefined | null | number }>({
 </template>
 <style lang="scss">
 .the-scroll-area {
-  max-height: 400px;
   overflow: auto;
 }
 </style>

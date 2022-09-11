@@ -15,7 +15,9 @@ const props = defineProps<{
   left: auto;
   right: auto;
   bottom: auto;
-  width: 400px;
+  max-width: 400px;
+  margin-left: 10px;
+  margin-right: 10px;
   z-index: 1000;
   background: #fff;
   border: 1px solid #eee;
@@ -23,23 +25,23 @@ const props = defineProps<{
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 
   &-bottom-left {
-    left: 10px;
+    left: 0;
     bottom: 100px;
   }
 
   &-bottom-right {
-    right: 10px;
+    right: 0;
     bottom: 100px;
   }
 
   &-top-right {
     top: 100px;
-    right: 10px;
+    right: 0;
   }
 
   &-top-left {
     top: 100px;
-    left: 10px;
+    left: 0;
   }
 
   &-centered {

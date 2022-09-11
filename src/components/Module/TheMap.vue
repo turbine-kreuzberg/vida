@@ -40,6 +40,8 @@ onMounted(() => {
 </template>
 <style lang="scss" scoped>
 #the-map {
+  width: calc(100vw - 80px);
+  max-width: 100%;
   height: 400px;
 }
 </style>
