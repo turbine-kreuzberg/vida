@@ -1,7 +1,7 @@
 # Todos
 
-- [ ] Make widget responsive
-- [ ] Close by swipe up on mobile
+- [x] Make widget responsive
+- [ ] Close by swipe up on mobile (conflict with scrolling, maybe swipe to the side, but that's not intuitive)
 - [ ] Make TheHelpCenter entry point component asynchronously loaded (chunk)
 - [x] Big and contrast-ful close-button.
 - [x] Have content page images with relative paths
