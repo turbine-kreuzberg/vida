@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import purgecss from 'rollup-plugin-purgecss';
 
-// @ts-ignore
 import { addScriptId } from './vite-plugin/add-script-id';
 
 export default defineConfig({
