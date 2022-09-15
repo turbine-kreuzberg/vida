@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import TheHelpCenter from './components/TheHelpCenter.vue';
 import ThePopup from './components/ThePopup.vue';
 import TheOpener from './components/TheOpener.vue';
 import { useApp } from './composables/useApp';
-import { onMounted, ref } from 'vue';
+import { defineAsyncComponent, onMounted, ref } from 'vue';
 import { onClickOutside, onKeyDown } from '@vueuse/core';
 
 const { open, close, dispatchLoaded, isOpen, configuration, position, showHand } =
@@ -11,6 +10,10 @@ const { open, close, dispatchLoaded, isOpen, configuration, position, showHand }
 
 const popup = ref<HTMLElement | null>(null);
 const opener = ref<HTMLElement | null>(null);
+
+const TheHelpCenter = defineAsyncComponent(async () => {
+  return await import('./components/TheHelpCenter.vue');
+});
 
 onMounted(() => {
   dispatchLoaded();
