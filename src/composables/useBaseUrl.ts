@@ -10,7 +10,7 @@ baseUrl.value =
 
 export function useBaseUrl() {
   const replacePublicPaths = (content: string) => {
-    return content.split('__public/').join(baseUrl.value);
+    return content.replaceAll('__public/', baseUrl.value);
   };
 
   return {
