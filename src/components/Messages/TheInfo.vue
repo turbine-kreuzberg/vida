@@ -1,5 +1,11 @@
+<script setup lang="ts">
+const props = defineProps<{
+  label: string | undefined;
+}>();
+</script>
 <template>
   <div class="the-info">
+    {{ props.label }}
     <slot />
   </div>
 </template>
