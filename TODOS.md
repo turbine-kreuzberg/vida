@@ -2,7 +2,7 @@
 
 - [x] Make widget responsive
 - [ ] Close by swipe up on mobile (conflict with scrolling, maybe swipe to the side, but that's not intuitive)
-- [ ] Make TheHelpCenter entry point component asynchronously loaded (chunk)
+- [x] Make TheHelpCenter entry point component asynchronously loaded (chunk)
 - [x] Big and contrast-ful close-button.
 - [x] Have content page images with relative paths
 - [ ] Introduce markers and headline for safe-places map
