@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     addScriptId(),
     purgecss({
+      output: false,
       content: [`./src/**/*.vue`],
       variables: false,
       safelist: {
