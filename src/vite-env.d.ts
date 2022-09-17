@@ -20,8 +20,10 @@ declare module 'leaflet-overpass-layer/src/OverPassLayer' {
   export interface OverPassLayerResult {
     elements: {
       [key: string]: string | number;
+      id: number;
       lat: number;
       lon: number;
+      type: string;
       tags: {
         [key: string]: string;
       };
