@@ -1,20 +1,30 @@
 <script setup lang="ts">
-import 'leaflet/dist/leaflet.css';
-import { LMap, LTileLayer } from '@vue-leaflet/vue-leaflet';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, nextTick } from 'vue';
+import { useMap } from '../../composables/useMap';
+import TheInfo from '../Messages/TheInfo.vue';
+import { useI18n } from 'vue-i18n';
+import TheTextContent from '../TheTextContent.vue';
 
-const center = ref<number[] | null>(null);
+const center = ref<[number, number] | null>(null);
 const hasAccessToLocation = ref<boolean | null>(null);
-const errorMessage = ref('Unknown error');
+const errorMessage = ref();
+const mapTag = ref<any>(null);
 
-const onAllowed = (position: GeolocationPosition) => {
+const { t } = useI18n();
+const { initMap, isMarkersLoaded } = useMap();
+
+const onAllowed = async (position: GeolocationPosition) => {
   center.value = [position.coords.latitude, position.coords.longitude];
   hasAccessToLocation.value = true;
+
+  await nextTick();
+  initMap(mapTag.value, center.value);
 };
 
 const onDisallowed = (error: GeolocationPositionError) => {
   if (error.code === 1) errorMessage.value = 'Access not granted.';
   if (error.code === 2) errorMessage.value = 'Could not retrieve your current location.';
+  if (error.code === 3) errorMessage.value = 'Timout';
   hasAccessToLocation.value = false;
 };
 
@@ -26,17 +36,15 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div v-if="hasAccessToLocation" id="the-map">
-    <l-map style="height: 100%; width: 100%" :zoom="14" :center="center">
-      <l-tile-layer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        layer-type="base"
-        name="OpenStreetMap"
-      ></l-tile-layer>
-    </l-map>
-  </div>
+  <template v-if="hasAccessToLocation">
+    <the-text-content>{{ t('index.safe_places_intro') }}</the-text-content>
+    <the-info v-if="!isMarkersLoaded" class="the-info">
+      {{ t('loading_safe_places') }} ...
+    </the-info>
+    <div id="the-map" ref="mapTag" />
+  </template>
   <div v-else-if="hasAccessToLocation === null">Waiting for permission ...</div>
-  <div v-else>You did not grant access to retrieve your location.</div>
+  <div v-else>{{ errorMessage.value }}</div>
 </template>
 <style lang="scss" scoped>
 #the-map {

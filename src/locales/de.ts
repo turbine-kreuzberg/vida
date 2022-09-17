@@ -3,6 +3,7 @@ export default {
   call_institution: '{institution} anrufen',
   find_a_safe_help_resource: 'Finden Sie eine sichere Hilfsquelle',
   go_to_live_chat: 'Zum livechat',
+  loading: 'Hilfsorte werden geladen',
   index: {
     emergency_header: `
       Wenn Sie oder jemand, den Sie kennen, in unmittelbarer Gefahr sind, rufen Sie bitte an: 

@@ -29,6 +29,7 @@ export default {
   call_institution: 'Call: {institution}',
   find_a_safe_help_resource: 'Find a safe help resource',
   go_to_live_chat: 'Go to livechat',
+  loading_safe_places: 'Loading safe places',
   index: {
     emergency_header: `
       If you or someone you know is in immediate danger, please call:
@@ -36,6 +37,8 @@ export default {
     `,
     safe_link_note:
       'Warning this link will appear in your browser history. You are leaving anonymous mode here. Do you want to proceed?',
+    safe_places_intro:
+      'The blue dots represent places, where you can anonymously ask for help.',
     widget_description: `
       <p>
         This widget provides anonymous access to assistance for
