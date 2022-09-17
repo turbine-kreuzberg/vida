@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import ThePopup from './components/ThePopup.vue';
 import TheOpener from './components/TheOpener.vue';
-import TheHelpCenter from './components/TheHelpCenter.vue';
 import { useApp } from './composables/useApp';
-import { onMounted, ref } from 'vue';
+import { defineAsyncComponent, onMounted, ref } from 'vue';
 import { onClickOutside, onKeyDown } from '@vueuse/core';
+
+const TheHelpCenter = defineAsyncComponent(
+  () => import('./components/TheHelpCenter.vue')
+);
 
 const { open, close, dispatchLoaded, isOpen, configuration, position, showHand } =
   useApp();
