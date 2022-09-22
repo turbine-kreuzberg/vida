@@ -5,9 +5,7 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 const { currentModule } = useApp();
 
-const back = () => {
-  currentModule.value = null;
-};
+const back = () => (currentModule.value = null);
 </script>
 <template>
   <div class="the-back" @click="back">&lt; {{ t('back') }}</div>
