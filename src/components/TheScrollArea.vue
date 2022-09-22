@@ -17,5 +17,9 @@ const style = ref<{ [key: string]: string | undefined | null | number }>({
 <style lang="scss">
 .the-scroll-area {
   overflow: auto;
+  padding-right: 10px;
+
+  // this prevents firefox scrollbar appearing with no reason :/ Is not so important and can also be removed.
+  padding-bottom: 10px;
 }
 </style>
