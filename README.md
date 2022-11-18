@@ -7,7 +7,7 @@ to retrieve information & help. The interaction with the widget is not trackable
 
 A more discreet implementation is also possible. See chapter: **Open widget from anywhere**
 
-Try out and configure your snipped here (in-progress still):   
+Try out and configure your snippet here (in-progress still):   
 https://vida.turbinekreuzberg.com 
 
 ## Usage
