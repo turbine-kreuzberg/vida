@@ -1,18 +1,22 @@
 <script setup lang="ts">
 import { IContentPage } from '../../types/content-page';
 import TheContentPage from '../Module/TheContentPage.vue';
-import { useApp } from '../../composables/useApp';
+import { useWidget } from '../../composables/useWidget';
 import { useContentPages } from '../../composables/useContentPages';
 
-const { currentModule } = useApp();
+const { configuration } = useWidget();
 
 const { contentPages } = useContentPages();
 
 const openContentPage = (contentPage: IContentPage) => {
-  currentModule.value = {
+  if (!configuration.value) {
+    throw new Error('Must initialize widget before setting active module');
+  }
+
+  configuration.value.setActiveModule({
     component: TheContentPage,
     props: { contentPage }
-  };
+  });
 };
 </script>
 <template>

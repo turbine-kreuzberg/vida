@@ -1,14 +1,14 @@
-import { createApp } from 'vue';
+import { createApp, defineAsyncComponent } from 'vue';
 import { createI18n } from 'vue-i18n';
-import App from './App.vue';
+import TheWidget from './TheWidget.vue';
 
 import en from './locales/en';
 import de from './locales/de';
 
-const appElement = document.createElement('div');
-document.body.append(appElement);
+const widgetElement = document.createElement('div');
+document.body.append(widgetElement);
 
-const app = createApp(App);
+const widget = createApp(TheWidget);
 const i18n = createI18n({
   legacy: false,
   locale: 'de',
@@ -23,5 +23,13 @@ const i18n = createI18n({
   }
 });
 
-app.use(i18n);
-app.mount(appElement);
+widget.use(i18n);
+widget.mount(widgetElement);
+
+const vidaReadmeElement = document.querySelector('#vida-readme');
+
+if (vidaReadmeElement) {
+  const readme = createApp(defineAsyncComponent(() => import('./TheReadme.vue')));
+  readme.use(i18n);
+  readme.mount(vidaReadmeElement);
+}

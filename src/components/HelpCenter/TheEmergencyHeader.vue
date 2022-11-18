@@ -1,16 +1,19 @@
 <script lang="ts" setup>
-import { useApp } from '../../composables/useApp';
+import { useWidget } from '../../composables/useWidget';
 import TheHeadline from '../TheHeadline.vue';
-import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
-const { configuration } = useApp();
-
-const emergencyNumber = ref(configuration.value?.emergencyNumber);
+const { configuration } = useWidget();
 </script>
 <template>
-  <the-headline v-if="emergencyNumber">
-    <div v-html="t('index.emergency_header', { emergencyNumber })" />
+  <the-headline v-if="configuration.getEmergencyNumber()">
+    <div
+      v-html="
+        t('index.emergency_header', {
+          emergencyNumber: configuration.getEmergencyNumber()
+        })
+      "
+    />
   </the-headline>
 </template>

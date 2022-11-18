@@ -7,7 +7,8 @@ to retrieve information & help. The interaction with the widget is not trackable
 
 A more discreet implementation is also possible. See chapter: **Open widget from anywhere**
 
-Try out here: https://vida.turbinekreuzberg.com
+Try out and configure your snipped here (in-progress still):   
+https://vida.turbinekreuzberg.com 
 
 ## Usage
 
@@ -26,21 +27,22 @@ Also feel free to suggest us new configurations.
 <link rel="stylesheet" href="https://vida.turbinekreuzberg.com/index.css">
 <script type="text/javascript">
     window.addEventListener('vida-loaded', function (e) {
-        window.vida = e.detail
-        window.vida.init({
-            language: 'de',
-            emergencyNumber: '110',
-            institution: {
-                name: 'Hilfetelefon',
-                phone: '08000116016',
-                information: "<p>Das Hilfetelefon \"Gewalt gegen Frauen\" ist ein bundesweites Beratungsangebot für Frauen, die Gewalt erlebt haben oder noch erleben. Unter der Nummer 08000 116 016 und via Online-Beratung unterstützen wir Betroffene aller Nationalitäten, mit und ohne Behinderung – 365 Tage im Jahr, rund um die Uhr. Auch Angehörige, Freundinnen und Freunde sowie Fachkräfte beraten wir anonym und kostenfrei.</p>",
-                chat: 'https://login.beranet.de/chatlight/index.php?firma_id=850&type=infochat'
-            },
-            widget: {
-                showHand: true,
-                position: 'bottom-right'
-            },
-        })
+        window.vida = e.detail;
+        window.vida.configuration = window.vida.Configuration.create()
+        window.vida.configuration
+                // general setting
+                .setLanguage('en')
+                .setHandColor('#1fd6b8')
+                .setEmergencyNumber('110')
+                .setHandVisible(true)
+                .setHandPosition('bottom-right')
+                // institution setting
+                .getInstitution()
+                .setName('Hilfetelefon')
+                .setPhone('08000116016')
+                .setInformation('<p>Das Hilfetelefon \"Gewalt gegen Frauen\" ist ein bundesweites Beratungsangebot für Frauen, die Gewalt erlebt haben oder noch erleben. Unter der Nummer 08000 116 016 und via Online-Beratung unterstützen wir Betroffene aller Nationalitäten, mit und ohne Behinderung – 365 Tage im Jahr, rund um die Uhr. Auch Angehörige, Freundinnen und Freunde sowie Fachkräfte beraten wir anonym und kostenfrei.</p>')
+                .setChat('https://login.beranet.de/chatlight/index.php?firma_id=850&type=infochat');
+        window.vida.init(window.vida.configuration);
     })
 </script>
 ```
@@ -53,21 +55,22 @@ Also feel free to suggest us new configurations.
 <link rel="stylesheet" href="https://vida.turbinekreuzberg.com/index.css">
 <script type="text/javascript">
     window.addEventListener('vida-loaded', function (e) {
-        window.vida = e.detail
-        window.vida.init({
-            language: 'pt',
-            emergencyNumber: '112',
-            institution: {
-                name: 'APAV',
-                phone: '116006',
-                information: "<p>A APAV apoia pessoas vítimas de crime, seus familiares e amigos, de forma gratuita e confidencial.\n</p><p>Oferecemos um apoio prático, psicológico, jurídico e social. Os/as nossos/as Técnicos/as de Apoio à Vítima são especializados no apoio a pessoas que foram ou são vítimas de algum tipo de crime e estão disponíveis para o ouvir, garantindo a confidencialidade e o respeito pela sua autonomia.</p>",
-                chat: 'https://www.facebook.com/APAV.Portugal/'
-            },
-            widget: {
-                showHand: true,
-                position: 'bottom-right'
-            },
-        })
+        window.vida = e.detail;
+        window.vida.configuration = window.vida.Configuration.create()
+        window.vida.configuration
+                // general setting
+                .setLanguage('en')
+                .setHandColor('#1fd6b8')
+                .setEmergencyNumber('110')
+                .setHandVisible(true)
+                .setHandPosition('bottom-right')
+                // institution setting
+                .getInstitution()
+                .setName('Hilfetelefon')
+                .setPhone('08000116016')
+                .setInformation('<p>Das Hilfetelefon \"Gewalt gegen Frauen\" ist ein bundesweites Beratungsangebot für Frauen, die Gewalt erlebt haben oder noch erleben. Unter der Nummer 08000 116 016 und via Online-Beratung unterstützen wir Betroffene aller Nationalitäten, mit und ohne Behinderung – 365 Tage im Jahr, rund um die Uhr. Auch Angehörige, Freundinnen und Freunde sowie Fachkräfte beraten wir anonym und kostenfrei.</p>')
+                .setChat('https://login.beranet.de/chatlight/index.php?firma_id=850&type=infochat');
+        window.vida.init(window.vida.configuration);
     })
 </script>
 ```

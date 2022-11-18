@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { useApp } from '../../composables/useApp';
+import { useWidget } from '../../composables/useWidget';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
-const { currentModule } = useApp();
+const { configuration } = useWidget();
 
-const back = () => (currentModule.value = null);
+const back = () => configuration.value.setActiveModule(null);
 </script>
 <template>
   <div class="the-back" @click="back">&lt; {{ t('back') }}</div>
