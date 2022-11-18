@@ -3,13 +3,13 @@ import TheHandClosed from './Svg/TheHandClosed.vue';
 import TheHandOpen from './Svg/TheHandOpen.vue';
 import TheClose from './Svg/TheClose.vue';
 import { ref } from 'vue';
-import { useApp } from '../composables/useApp';
+import { useWidget } from '../composables/useWidget';
 
 const props = defineProps<{
   position: string;
 }>();
 
-const { isOpen } = useApp();
+const { configuration } = useWidget();
 
 const isHover = ref<boolean>(false);
 </script>
@@ -20,7 +20,7 @@ const isHover = ref<boolean>(false);
     @mouseenter="isHover = true"
     @mouseleave="isHover = false"
   >
-    <template v-if="!isOpen">
+    <template v-if="!configuration.isVisible()">
       <the-hand-closed v-if="isHover" />
       <the-hand-open v-else />
     </template>

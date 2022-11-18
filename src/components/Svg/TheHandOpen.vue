@@ -1,11 +1,10 @@
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
     x="0px"
     y="0px"
     viewBox="0 0 1000 1000"
-    style="enable-background: new 0 0 1000 1000"
+    :style="style"
     xml:space="preserve"
   >
     <g id="Ebene_2">
@@ -126,8 +125,20 @@
     </g>
   </svg>
 </template>
+<script lang="ts" setup>
+import { computed, ref } from 'vue';
+import { useWidget } from '../../composables/useWidget';
+
+const { configuration } = useWidget();
+
+const color = computed(() => configuration.value.getHandColor());
+
+const style = ref<any>({
+  '--color': color
+});
+</script>
 <style lang="scss" scoped>
 .st0 {
-  fill: #ffd302;
+  fill: var(--color);
 }
 </style>

@@ -1,6 +1,8 @@
 <script lang="ts" setup>
+import { HandPosition } from '../models/Configuration';
+
 const props = defineProps<{
-  position: string;
+  position: HandPosition;
 }>();
 </script>
 <template>

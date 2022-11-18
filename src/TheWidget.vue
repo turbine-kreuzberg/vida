@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ThePopup from './components/ThePopup.vue';
 import TheOpener from './components/TheOpener.vue';
-import { useApp } from './composables/useApp';
+import { useWidget } from './composables/useWidget';
 import { defineAsyncComponent, onMounted, ref } from 'vue';
 import { onClickOutside, onKeyDown } from '@vueuse/core';
 
@@ -9,28 +9,31 @@ const TheHelpCenter = defineAsyncComponent(
   () => import('./components/TheHelpCenter.vue')
 );
 
-const { open, close, dispatchLoaded, isOpen, configuration, position, showHand } =
-  useApp();
+const { dispatchLoaded, isInitialized, configuration } = useWidget();
 
 const popup = ref<HTMLElement | null>(null);
 const opener = ref<HTMLElement | null>(null);
 
 onMounted(() => {
   dispatchLoaded();
-  onClickOutside(popup, () => close(), { ignore: [opener] });
-  onKeyDown('Escape', () => close());
+  onClickOutside(popup, () => configuration.value.close(), { ignore: [opener] });
+  onKeyDown('Escape', () => configuration.value.close());
 });
 </script>
 
 <template>
-  <div v-if="configuration" class="the-app">
+  <div v-if="isInitialized" class="the-app">
     <TheOpener
-      v-if="showHand"
+      v-if="configuration.isHandVisible()"
       ref="opener"
-      :position="position"
-      @click="!isOpen ? open() : close()"
+      :position="configuration.getHandPosition()"
+      @click="!configuration.isVisible() ? configuration.open() : configuration.close()"
     />
-    <ThePopup v-if="isOpen" ref="popup" :position="position">
+    <ThePopup
+      v-if="configuration.isVisible()"
+      ref="popup"
+      :position="configuration.getHandPosition()"
+    >
       <TheHelpCenter />
     </ThePopup>
   </div>

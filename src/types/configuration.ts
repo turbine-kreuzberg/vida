@@ -1,3 +1,6 @@
+/**
+ * @deprecated don't use as we have a dedicated model for configuration
+ */
 export interface IConfiguration {
   language: string;
   emergencyNumber: string;

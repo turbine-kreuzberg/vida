@@ -36,6 +36,10 @@ const props = withDefaults(defineProps<Props>(), {
 
   :deep(p) {
     margin: 0 0 1em 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   :deep(h3) {
@@ -51,9 +55,17 @@ const props = withDefaults(defineProps<Props>(), {
     list-style-type: disc;
     margin: 0 0 20px 20px;
     padding: 0;
+
     li {
       margin: 0 5px 5px 5px;
     }
+  }
+
+  :deep(hr) {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin: 2em 0;
   }
 
   &.important {

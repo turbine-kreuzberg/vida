@@ -2,12 +2,12 @@
 
 import { IContentPage } from '../types/content-page';
 import { ref } from 'vue';
-import { useApp } from './useApp';
+import { useWidget } from './useWidget';
 import { useBaseUrl } from './useBaseUrl';
 import { useI18n } from 'vue-i18n';
 
 export function useContentPages() {
-  const { configuration } = useApp();
+  const { configuration } = useWidget();
   const { replacePublicPaths } = useBaseUrl();
   const { t } = useI18n();
 
