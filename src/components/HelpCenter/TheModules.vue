@@ -3,12 +3,13 @@ import { useWidget } from '../../composables/useWidget';
 import TheMap from '../Module/TheMap.vue';
 import { useSafeLink } from '../../composables/useSafeLink';
 import { useI18n } from 'vue-i18n';
+import { computed } from 'vue';
 
 const { t } = useI18n();
 const { configuration } = useWidget();
 const { safeLink } = useSafeLink();
 
-const institution = configuration.value.getInstitution();
+const institution = computed(() => configuration.value.getInstitution());
 
 const openSafePlaces = () => {
   configuration.value.setActiveModule({
