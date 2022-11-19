@@ -1,0 +1,29 @@
+<script
+  type="module"
+  crossorigin
+  src="https://vida.turbinekreuzberg.com/index.js"
+  id="vida-script"
+></script>
+<link rel="stylesheet" href="https://vida.turbinekreuzberg.com/index.css" />
+<script type="text/javascript">
+  window.addEventListener('vida-loaded', function (e) {
+    window.vida = e.detail;
+    window.vida.configuration = window.vida.Configuration.create();
+    window.vida.configuration
+
+      // general setting
+      .setLanguage('en')
+      .setHandColor('###color###')
+      .setEmergencyNumber('110')
+      .setHandVisible(###visible###)
+      .setHandPosition(###position###)
+
+      // institution setting
+      .getInstitution()
+      .setName('Hilfetelefon')
+      .setPhone('08000116016')
+      .setInformation('<p>Das Hilfetelefon "Gewalt gegen Frauen" ist ein bundesweites Beratungsangebot für Frauen, die Gewalt erlebt haben oder noch erleben. Unter der Nummer 08000 116 016 und via Online-Beratung unterstützen wir Betroffene aller Nationalitäten, mit und ohne Behinderung – 365 Tage im Jahr, rund um die Uhr. Auch Angehörige, Freundinnen und Freunde sowie Fachkräfte beraten wir anonym und kostenfrei.</p>')
+      .setChat('https://login.beranet.de/chatlight/index.php?firma_id=850&type=infochat');
+    window.vida.init(window.vida.configuration);
+  });
+</script>

@@ -8,8 +8,8 @@ const TheHeadline = defineAsyncComponent(() => import('./components/TheHeadline.
 const TheTextContent = defineAsyncComponent(
   () => import('./components/TheTextContent.vue')
 );
-const TheCodeContent = defineAsyncComponent(
-  () => import('./components/TheCodeContent.vue')
+const TheCurrentSnippet = defineAsyncComponent(
+  () => import('./components/TheCurrentSnippet.vue')
 );
 const TheConfigurator = defineAsyncComponent(
   () => import('./components/TheConfigurator.vue')
@@ -42,7 +42,7 @@ const style = ref<any>({
       <p>Configure your snippet copy & paste it to your website.</p>
     </the-text-content>
     <the-configurator />
-    <the-code-content>Not yet implemented</the-code-content>
+    <the-current-snippet />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -51,7 +51,7 @@ const style = ref<any>({
   border-radius: 10px;
   padding: 20px;
   font-family: monospace;
-  margin: 0 auto;
-  max-width: 500px;
+  margin: 50px auto;
+  max-width: 700px;
 }
 </style>
