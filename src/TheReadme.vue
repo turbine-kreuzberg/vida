@@ -52,6 +52,6 @@ const style = ref<any>({
   padding: 20px;
   font-family: monospace;
   margin: 50px auto;
-  max-width: 700px;
+  max-width: 600px;
 }
 </style>
