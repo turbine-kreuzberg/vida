@@ -51,7 +51,8 @@ const style = ref<any>({
   border-radius: 10px;
   padding: 20px;
   font-family: monospace;
-  margin: 50px auto;
+  margin: 20px auto;
   max-width: 600px;
+  font-size: 16px;
 }
 </style>

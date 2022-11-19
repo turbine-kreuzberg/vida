@@ -47,7 +47,7 @@ watch(language, (v) => configuration.value.setLanguage(v));
 </template>
 <style scoped lang="scss">
 .the-configurator {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   display: flex;
   flex-flow: row wrap;
 
