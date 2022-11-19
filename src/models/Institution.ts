@@ -1,10 +1,20 @@
 export class Institution {
   constructor(
+    private key: string,
     private name: string,
     private phone: string,
     private information: string,
     private chat: string | null = null
   ) {}
+
+  getKey(): string {
+    return this.key;
+  }
+
+  setKey(key: string): this {
+    this.key = key;
+    return this;
+  }
 
   getName(): string {
     return this.name;
