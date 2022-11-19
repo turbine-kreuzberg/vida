@@ -47,7 +47,7 @@ const style = ref<any>({
 </template>
 <style lang="scss" scoped>
 .the-readme {
-  border: 3px solid var(--color);
+  border: 6px solid var(--color);
   border-radius: 10px;
   padding: 20px;
   font-family: monospace;

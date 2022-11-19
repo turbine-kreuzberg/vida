@@ -50,11 +50,13 @@ watch(language, (v) => configuration.value.setLanguage(v));
   margin-bottom: 1em;
   display: flex;
   flex-flow: row wrap;
+  margin-right: -1em;
 
   .fieldset {
     display: block;
-    flex-basis: 25%;
-    background: #eee;
+    flex-basis: calc(33.33333333% - 3em - 6px);
+    border: 1px solid #ddd;
+    border-radius: 10px;
     padding: 1em;
     margin-right: 1em;
     margin-bottom: 1em;
