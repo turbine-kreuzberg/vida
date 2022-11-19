@@ -1,1 +1,0 @@
-import{j as t,o,b as n,k as c}from"../index.js";const s={},_={class:"the-code-content"};function d(e,a){return o(),n("div",_,[c(e.$slots,"default",{},void 0,!0)])}const l=t(s,[["render",d],["__scopeId","data-v-2de934c2"]]);export{l as default};
