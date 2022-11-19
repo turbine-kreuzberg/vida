@@ -1,24 +1,54 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 import { useWidget } from '../composables/useWidget';
+import { useInstitutions } from '../composables/useInstitutions';
 
 const { configuration } = useWidget();
+const { institutions, findInstitution } = useInstitutions();
 
 const color = ref<string>(configuration.value.getHandColor());
 const position = ref<string>('bottom-right');
 const visible = ref<boolean>(true);
 const language = ref<string>('en');
+const emergencyNumber = ref<string>('112');
+const institution = ref<string>(configuration.value.getInstitution().getKey());
+const forceOpen = ref<boolean>(false);
 
 watch(color, (v) => configuration.value.setHandColor(v));
 watch(position, (v) => configuration.value.setHandPosition(v));
 watch(visible, (v) => configuration.value.setHandVisible(v));
 watch(language, (v) => configuration.value.setLanguage(v));
+watch(emergencyNumber, (v) => configuration.value.setEmergencyNumber(v));
+watch(institution, (v) => configuration.value.setInstitution(findInstitution(v)));
+watch(forceOpen, (v) => configuration.value.setForceOpen(v));
 </script>
 <template>
+  <div class="force-open">
+    Force widget to be open <input v-model="forceOpen" type="checkbox" />
+  </div>
   <div class="the-configurator">
     <label class="fieldset">
+      <span class="label">Institution</span>
+      <select v-model="institution" class="select">
+        <option
+          v-for="institutionOption in institutions"
+          :key="institutionOption.getKey()"
+          :value="institutionOption.getKey()"
+        >
+          {{ institutionOption.getKey() }}
+        </option>
+      </select>
+    </label>
+    <label class="fieldset">
+      <span class="label">Language</span>
+      <select v-model="language" class="select">
+        <option :value="'en'">English</option>
+        <option :value="'de'">German</option>
+      </select>
+    </label>
+    <label class="fieldset">
       <span class="label">Color</span>
-      <input v-model="color" type="color" class="input" :placeholder="'#ff0000'" />
+      <input v-model="color" type="color" class="color" :placeholder="'#ff0000'" />
     </label>
     <label class="fieldset">
       <span class="label">Position</span>
@@ -30,22 +60,24 @@ watch(language, (v) => configuration.value.setLanguage(v));
       </select>
     </label>
     <label class="fieldset">
+      <span class="label">Emergency Nr.</span>
+      <input v-model="emergencyNumber" type="text" class="input" />
+    </label>
+    <label class="fieldset">
       <span class="label">Show/Hide hand</span>
       <select v-model="visible" class="select">
         <option :value="true">Show hand</option>
         <option :value="false">Hide hand</option>
       </select>
     </label>
-    <label class="fieldset">
-      <span class="label">Language</span>
-      <select v-model="language" class="select">
-        <option :value="'en'">English</option>
-        <option :value="'de'">German</option>
-      </select>
-    </label>
   </div>
 </template>
 <style scoped lang="scss">
+.force-open {
+  font-size: 0.9em;
+  margin-bottom: 2em;
+}
+
 .the-configurator {
   margin-bottom: 1em;
   display: flex;
@@ -70,8 +102,17 @@ watch(language, (v) => configuration.value.setLanguage(v));
 
     .input {
       display: block;
-      width: 100%;
+      width: calc(100% - 2em);
+      height: 2.3em;
+      padding: 0 1em;
+      line-height: 1;
+      border: 1px solid #000;
+    }
+
+    .color {
+      display: block;
       height: 2.5em;
+      width: 100%;
     }
 
     .select {

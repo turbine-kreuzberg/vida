@@ -30,7 +30,7 @@ onMounted(() => {
       @click="!configuration.isVisible() ? configuration.open() : configuration.close()"
     />
     <ThePopup
-      v-if="configuration.isVisible()"
+      v-if="configuration.isForceOpen() || configuration.isVisible()"
       ref="popup"
       :position="configuration.getHandPosition()"
     >

@@ -6,6 +6,8 @@ import { markRaw } from 'vue';
 export type HandPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
 export class Configuration {
+  private forceOpen = false;
+
   static create(): Configuration {
     return new Configuration(
       'en',
@@ -13,7 +15,12 @@ export class Configuration {
       'bottom-right',
       true,
       '#ffffff',
-      new Institution('dummy institution', 'dummy number', 'dummy info')
+      new Institution(
+        'dummy-institution',
+        'dummy institution',
+        'dummy number',
+        'dummy info'
+      )
     );
   }
 
@@ -40,6 +47,7 @@ export class Configuration {
       data.widget.showHand,
       '#d9e34c',
       new Institution(
+        data.institution.name,
         data.institution.name,
         data.institution.phone,
         data.institution.information,
@@ -151,6 +159,15 @@ export class Configuration {
     this.activeModule = module
       ? { component: markRaw(module.component), props: module.props }
       : null;
+    return this;
+  }
+
+  isForceOpen(): boolean {
+    return this.forceOpen;
+  }
+
+  setForceOpen(forceOpen: boolean): this {
+    this.forceOpen = forceOpen;
     return this;
   }
 }

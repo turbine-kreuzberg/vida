@@ -10,11 +10,22 @@ const copySuccess = ref(false);
 const snippetPrepared = computed(() => {
   let snippedPrepared = snippet;
 
+  const config = configuration.value;
+  const institution = config.getInstitution();
+  const chat = institution.hasChat() ? institution.getChat() : null;
+
+  const escape = (string: string) => string.replace(/\\"/g, '&quot;');
+
   const markers: { [key: string]: string } = {
-    color: configuration.value.getHandColor(),
-    position: configuration.value.getHandPosition(),
-    visible: configuration.value.isHandVisible() ? 'true' : 'false',
-    language: configuration.value.getLanguage()
+    color: `"${config.getHandColor()}"`,
+    position: `"${config.getHandPosition()}"`,
+    visible: config.isHandVisible() ? 'true' : 'false',
+    language: `"${config.getLanguage()}"`,
+    emergencyNumber: `"${config.getEmergencyNumber()}"`,
+    institutionName: `"${institution.getName()}"`,
+    institutionPhone: `"${institution.getPhone()}"`,
+    institutionInformation: `"${escape(institution.getInformation())}"`,
+    institutionChat: chat ? `"${chat}"` : 'null'
   };
 
   for (const marker in markers) {
