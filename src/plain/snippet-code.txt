@@ -7,11 +7,11 @@
     window.vida.configuration
 
       // general setting
-      .setLanguage('en')
+      .setLanguage('###language###')
       .setHandColor('###color###')
       .setEmergencyNumber('110')
       .setHandVisible(###visible###)
-      .setHandPosition(###position###)
+      .setHandPosition('###position###')
 
       // institution setting
       .getInstitution()

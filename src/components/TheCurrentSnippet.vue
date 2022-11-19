@@ -13,7 +13,8 @@ const snippetPrepared = computed(() => {
   const markers: { [key: string]: string } = {
     color: configuration.value.getHandColor(),
     position: configuration.value.getHandPosition(),
-    visible: configuration.value.isHandVisible() ? 'true' : 'false'
+    visible: configuration.value.isHandVisible() ? 'true' : 'false',
+    language: configuration.value.getLanguage()
   };
 
   for (const marker in markers) {
@@ -40,61 +41,55 @@ const copyToClipboard = async () => {
 
   window.setTimeout(() => (copySuccess.value = false), 1000);
 };
-
-const style = computed(() => {
-  return {
-    '--color': configuration.value.getHandColor()
-  };
-});
 </script>
 <template>
-  <a :style="style" class="copy" @click="copyToClipboard">
-    &#x2398; Copy code to clipboard.
-    <span v-if="copySuccess">(done)</span>
-  </a>
   <div class="the-current-snippet">
-    <div class="scroll-area">
-      <pre v-text="snippetPrepared" />
+    <div class="copy" @click="copyToClipboard">
+      Copy code to clipboard.
+      <span v-if="copySuccess">(done)</span>
     </div>
+    <pre v-text="snippetPrepared" />
   </div>
 </template>
 <style lang="scss" scoped>
 .the-current-snippet {
-  padding: 1em;
+  position: relative;
   background: #043454;
   color: #fff;
-  height: 200px;
-  overflow: auto;
-  font-size: 0.8em;
 
   pre {
+    overflow: auto;
+    height: 200px;
+    padding: 2em;
     margin: 0;
+    font-size: 0.8em;
+
+    &::-webkit-scrollbar {
+      width: 0.5em;
+      height: 0.5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
   }
 
-  &::-webkit-scrollbar {
-    width: 0.5em;
-    height: 0.5em;
-  }
+  .copy {
+    display: block;
+    cursor: pointer;
+    padding: 0.7em 1em;
+    font-size: 0.8em;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    text-align: center;
 
-  &::-webkit-scrollbar-track {
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #124973;
-  }
-}
-
-.copy {
-  display: inline-block;
-  cursor: pointer;
-  margin-bottom: 1em;
-  padding: 0.7em 1em;
-  font-size: 0.8em;
-  background: var(--color);
-  color: #000;
-
-  &:hover {
-    opacity: 0.8;
+    &:hover {
+      background: #00000066;
+    }
   }
 }
 </style>
