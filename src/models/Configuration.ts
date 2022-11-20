@@ -2,6 +2,7 @@ import { Institution } from './Institution';
 import { IConfiguration } from '../types/configuration';
 import { IModule } from '../types/module';
 import { markRaw } from 'vue';
+import { generateRandomColor } from '../utils/utils';
 
 export type HandPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
@@ -108,6 +109,8 @@ export class Configuration {
   }
 
   setHandColor(handColor: string): this {
+    if (handColor === 'random') handColor = generateRandomColor();
+
     this.handColor = handColor;
     return this;
   }
