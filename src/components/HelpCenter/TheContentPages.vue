@@ -5,7 +5,6 @@ import { useWidget } from '../../composables/useWidget';
 import { useContentPages } from '../../composables/useContentPages';
 
 const { configuration } = useWidget();
-
 const { contentPages } = useContentPages();
 
 const openContentPage = (contentPage: IContentPage) => {

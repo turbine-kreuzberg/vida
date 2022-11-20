@@ -7,10 +7,10 @@ const { configuration } = useWidget();
 const { institutions, findInstitution } = useInstitutions();
 
 const color = ref<string>(configuration.value.getHandColor());
-const position = ref<string>('bottom-right');
-const visible = ref<boolean>(true);
-const language = ref<string>('en');
-const emergencyNumber = ref<string>('112');
+const position = ref<string>(configuration.value.getHandPosition());
+const visible = ref<boolean>(configuration.value.isVisible());
+const language = ref<string>(configuration.value.getLanguage());
+const emergencyNumber = ref<string>(configuration.value.getEmergencyNumber());
 const institution = ref<string>(configuration.value.getInstitution().getKey());
 const forceOpen = ref<boolean>(false);
 
