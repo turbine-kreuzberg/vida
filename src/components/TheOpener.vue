@@ -70,5 +70,10 @@ const isHover = ref<boolean>(false);
     left: 50%;
     margin-left: -40px;
   }
+
+  > * {
+    width: auto;
+    height: 100%;
+  }
 }
 </style>
