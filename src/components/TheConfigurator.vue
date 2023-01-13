@@ -24,7 +24,7 @@ watch(forceOpen, (v) => configuration.value.setForceOpen(v));
 </script>
 <template>
   <div class="force-open">
-    Force widget to be open <input v-model="forceOpen" type="checkbox" />
+    Keep Widget open during configuration <input v-model="forceOpen" type="checkbox" />
   </div>
   <div class="the-configurator">
     <label class="fieldset">
