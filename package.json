@@ -21,7 +21,7 @@
     "@vitejs/plugin-vue": "4.0.0",
     "@vue/eslint-config-prettier": "7.0.0",
     "@vue/eslint-config-typescript": "11.0.2",
-    "@vueuse/core": "9.10.0",
+    "@vueuse/core": "9.11.1",
     "eslint": "8.32.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-prettier": "4.2.1",
