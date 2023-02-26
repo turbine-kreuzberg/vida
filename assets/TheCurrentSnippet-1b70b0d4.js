@@ -1,4 +1,4 @@
-import{d as m,u as f,r as h,c as _,o as c,b as d,i as u,g as v,q as w,t as C,f as y,j as b}from"../index.js";const x=`<script type="module" crossorigin src="https://vida.turbinekreuzberg.com/index.js" id="vida-script"><\/script>
+import{d as m,u as f,r as h,c as _,o as c,b as d,i as u,f as v,q as w,t as C,g as y,j as b}from"../index.js";const x=`<script type="module" crossorigin src="https://vida.turbinekreuzberg.com/index.js" id="vida-script"><\/script>
 <link rel="stylesheet" href="https://vida.turbinekreuzberg.com/index.css" />
 <script type="text/javascript">
   window.addEventListener('vida-loaded', function (e) {
