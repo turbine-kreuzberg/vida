@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore --fix src"
   },
   "dependencies": {
-    "vue": "3.2.45"
+    "vue": "3.2.47"
   },
   "devDependencies": {
     "@intlify/vite-plugin-vue-i18n": "6.0.3",
