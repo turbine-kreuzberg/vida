@@ -4,6 +4,7 @@ import TheMap from '../Module/TheMap.vue';
 import { useSafeLink } from '../../composables/useSafeLink';
 import { useI18n } from 'vue-i18n';
 import { computed } from 'vue';
+import TheActionButton from '../TheActionButton.vue';
 
 const { t } = useI18n();
 const { configuration } = useWidget();
@@ -19,20 +20,20 @@ const openSafePlaces = () => {
 </script>
 <template>
   <div class="the-modules">
-    <a class="the-module" :href="`tel:${institution.getPhone()}`">
+    <the-action-button :color="'red'" :href="`tel:${institution.getPhone()}`">
       {{ t('call_institution', { institution: institution.getName() }) }}<br />
-      <span class="the-small">{{ institution.getPhone() }}</span>
-    </a>
-    <a class="the-module" @click="openSafePlaces()">
+      <span class="the-underline">{{ institution.getPhone() }}</span>
+    </the-action-button>
+    <the-action-button :color="'violet'" @click="openSafePlaces()">
       {{ t('find_a_safe_help_resource') }}
-    </a>
-    <a
+    </the-action-button>
+    <the-action-button
       v-if="institution.hasChat()"
-      class="the-module"
+      :color="'dark-rosa'"
       @click="safeLink(institution.getChat())"
     >
       {{ t('go_to_live_chat') }}
-    </a>
+    </the-action-button>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -41,9 +42,8 @@ a {
   text-decoration: none;
 }
 
-.the-small {
-  font-size: 0.8em;
-  color: #666;
+.the-underline {
+  text-decoration: underline;
 }
 
 .the-modules {
@@ -51,17 +51,5 @@ a {
   flex-direction: column;
   row-gap: 10px;
   margin-bottom: 40px;
-}
-
-.the-module {
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 20px;
-  cursor: pointer;
-  text-align: center;
-
-  &:hover {
-    border-color: #000;
-  }
 }
 </style>

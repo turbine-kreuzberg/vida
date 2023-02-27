@@ -42,11 +42,11 @@ export default {
     widget_description: `
       <p>
         This widget provides anonymous access to assistance for
-        <strong>victims of domestic violence.</strong>
+        victims of domestic violence.
       </p>
       <p>
-        This box will disappear immediately if you click the X button or type "ESC" on your
-        keyboard or click outside of this popup.
+        <strong>This box will disappear immediately if you click the X button or type "ESC" on your
+        keyboard or click outside of this popup.</strong>
       </p>
     `
   },

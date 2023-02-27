@@ -17,13 +17,13 @@ const props = defineProps<{
   left: auto;
   right: auto;
   bottom: auto;
-  max-width: 400px;
+  max-width: 450px;
   margin-left: 10px;
   margin-right: 10px;
   z-index: 1000;
   background: #fff;
   border: 1px solid #eee;
-  border-radius: 15px;
+  border-radius: 2em;
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 
   &-bottom-left {

@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import { computed, defineAsyncComponent, ref } from 'vue';
 import { useWidget } from './composables/useWidget';
+import { useColors } from './composables/useColors';
 
 const { configuration } = useWidget();
+const { cssVariables } = useColors();
 
 const TheHeadline = defineAsyncComponent(() => import('./components/TheHeadline.vue'));
 const TheTextContent = defineAsyncComponent(
@@ -15,15 +17,18 @@ const TheConfigurator = defineAsyncComponent(
   () => import('./components/TheConfigurator.vue')
 );
 
+const TheLogo = defineAsyncComponent(() => import('./components/TheLogo.vue'));
+
 const color = computed(() => configuration.value.getHandColor());
 
-const style = ref<any>({
-  '--color': color
+const style = ref<{ [key: string]: any }>({
+  '--color': color,
+  ...cssVariables.value
 });
 </script>
 <template>
   <div class="the-readme" :style="style">
-    <the-headline>VIDA</the-headline>
+    <the-logo />
     <the-text-content>
       <p>
         The widget can be applied on any website. The outcome will be a little hand on the
@@ -47,12 +52,19 @@ const style = ref<any>({
 </template>
 <style lang="scss" scoped>
 .the-readme {
-  border: 6px solid var(--color);
-  border-radius: 10px;
   padding: 20px;
-  font-family: monospace;
+  font-family: 'Work Sans', sans-serif;
+  color: var(--violet);
   margin: 20px auto;
-  max-width: 600px;
-  font-size: 16px;
+  max-width: 800px;
+  font-size: 25px;
+
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
+}
+
+.the-current-snippet {
+  font-size: 0.7em;
 }
 </style>

@@ -13,11 +13,11 @@ export default {
       'Achtung: Dieser Link wird in Ihrem Browserverlauf erscheinen. Sie verlassen hier den anonymen Modus. Möchten Sie fortfahren?',
     widget_description: `
       <p>
-        Dieses Widget bietet <strong>Opfern häuslicher Gewalt</strong> anonymen Zugang zu Hilfsangeboten.
+        Dieses Widget bietet Opfern häuslicher Gewalt anonymen Zugang zu Hilfsangeboten.
       </p>
       <p>
-        Dieses Popup wird sofort ausgeblendet, wenn Sie auf die <strong>Schaltfläche X klicken</strong> oder 
-        <strong>[ESC]</strong> auf Ihrer Tastatur drücken oder <strong>außerhalb dieses Popups klicken</strong>.
+        <strong>Dieses Popup wird sofort ausgeblendet, wenn Sie auf die Schaltfläche X klicken oder 
+        [ESC] auf Ihrer Tastatur drücken oder außerhalb dieses Popups klicken.</strong>
       </p>
     `
   }

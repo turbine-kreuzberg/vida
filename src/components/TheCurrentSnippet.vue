@@ -2,6 +2,7 @@
 import snippet from './../plain/snippet-code.txt?raw';
 import { computed, ref } from 'vue';
 import { useWidget } from '../composables/useWidget';
+import TheActionButton from './TheActionButton.vue';
 
 const { configuration } = useWidget();
 
@@ -55,25 +56,30 @@ const copyToClipboard = async () => {
 </script>
 <template>
   <div class="the-current-snippet">
-    <div class="copy" @click="copyToClipboard">
-      Copy code to clipboard.
+    <the-action-button color="dark-rosa" @click="copyToClipboard">
+      Copy to clipboard
       <span v-if="copySuccess">(done)</span>
-    </div>
+    </the-action-button>
     <pre v-text="snippetPrepared" />
   </div>
 </template>
 <style lang="scss" scoped>
+.the-action-button {
+  margin-bottom: 1em;
+}
 .the-current-snippet {
   position: relative;
-  background: #043454;
-  color: #fff;
+  background: #fff;
+  color: #888;
 
   pre {
     overflow: auto;
-    height: 200px;
+    height: 400px;
     padding: 2em;
     margin: 0;
     font-size: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 
     &::-webkit-scrollbar {
       width: 0.5em;
@@ -81,25 +87,11 @@ const copyToClipboard = async () => {
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: var(--dark-rosa);
     }
 
     &::-webkit-scrollbar-corner {
       background: transparent;
-    }
-  }
-
-  .copy {
-    display: block;
-    cursor: pointer;
-    padding: 0.7em 1em;
-    font-size: 0.8em;
-    border-bottom: 2px solid #ffffff;
-    color: #ffffff;
-    text-align: center;
-
-    &:hover {
-      background: #00000066;
     }
   }
 }

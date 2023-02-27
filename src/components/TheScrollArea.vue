@@ -6,7 +6,7 @@ const props = defineProps<{
 }>();
 
 const style = ref<{ [key: string]: string | undefined | null | number }>({
-  maxHeight: props.maxHeight || 'calc(100vh - 220px)'
+  maxHeight: props.maxHeight || 'calc(100vh - 300px)'
 });
 </script>
 <template>
