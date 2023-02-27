@@ -1,0 +1,1 @@
+import{d as a,o as n,e as s,j as l,l as c,h as r,t as _,x as u,k as i}from"../index.js";const d=a({__name:"TheActionButton",props:{label:null,color:null},setup(e){const t=e;return(o,p)=>(n(),s("a",{class:u(["the-action-button",e.color])},[l("div",null,[c(o.$slots,"default",{},void 0,!0),r(_(t.label||""),1)])],2))}});const h=i(d,[["__scopeId","data-v-57c22502"]]);export{h as T};

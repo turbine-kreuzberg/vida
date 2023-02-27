@@ -1,1 +1,0 @@
-import{j as t,o as n,b as s,k as _}from"../index.js";const o={},a={class:"the-headline"};function c(e,d){return n(),s("div",a,[_(e.$slots,"default",{},void 0,!0)])}const l=t(o,[["render",c],["__scopeId","data-v-3506516f"]]);export{l as default};
