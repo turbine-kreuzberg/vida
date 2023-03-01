@@ -1,12 +1,22 @@
 <script lang="ts" setup>
+import { useColors } from '../composables/useColors';
+import { ref } from 'vue';
+
 const props = defineProps<{
   label?: string;
   color?: string;
 }>();
+
+const { getColor } = useColors();
+const color = getColor(props.color || 'black');
+const cssVariables = ref({ '--color': color });
 </script>
 <template>
-  <a class="the-action-button" :class="color">
-    <div><slot />{{ props.label || '' }}</div>
+  <a class="the-action-button" :style="cssVariables">
+    <div>
+      <slot />
+      {{ props.label || '' }}
+    </div>
   </a>
 </template>
 <style lang="scss" scoped>
@@ -15,7 +25,7 @@ const props = defineProps<{
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: #000;
+  background: var(--color);
   color: #fff;
   padding: 1em;
   border-radius: 1em;
@@ -23,17 +33,5 @@ const props = defineProps<{
   column-gap: 10px;
   text-align: center;
   min-height: 2.5em;
-
-  &.red {
-    background: var(--red);
-  }
-
-  &.violet {
-    background: var(--violet);
-  }
-
-  &.dark-rosa {
-    background: var(--dark-rosa);
-  }
 }
 </style>

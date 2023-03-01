@@ -6,12 +6,8 @@ import { useColors } from './composables/useColors';
 const { configuration } = useWidget();
 const { cssVariables } = useColors();
 
-const TheHeadline = defineAsyncComponent(() => import('./components/TheHeadline.vue'));
 const TheTextContent = defineAsyncComponent(
   () => import('./components/TheTextContent.vue')
-);
-const TheCurrentSnippet = defineAsyncComponent(
-  () => import('./components/TheCurrentSnippet.vue')
 );
 const TheConfigurator = defineAsyncComponent(
   () => import('./components/TheConfigurator.vue')
@@ -40,14 +36,8 @@ const style = ref<{ [key: string]: any }>({
         <a href="#" onclick="window.vida.open(); return false;">click here</a>
         .
       </p>
-      <hr />
-    </the-text-content>
-    <the-headline>Usage</the-headline>
-    <the-text-content>
-      <p>Configure your snippet copy & paste it to your website.</p>
     </the-text-content>
     <the-configurator />
-    <the-current-snippet />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -66,5 +56,9 @@ const style = ref<{ [key: string]: any }>({
 
 .the-current-snippet {
   font-size: 0.7em;
+}
+
+.the-configurator {
+  margin-top: 2em;
 }
 </style>

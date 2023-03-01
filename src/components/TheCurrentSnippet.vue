@@ -2,7 +2,7 @@
 import snippet from './../plain/snippet-code.txt?raw';
 import { computed, ref } from 'vue';
 import { useWidget } from '../composables/useWidget';
-import TheActionButton from './TheActionButton.vue';
+import TheButton from './TheButton.vue';
 
 const { configuration } = useWidget();
 
@@ -56,10 +56,10 @@ const copyToClipboard = async () => {
 </script>
 <template>
   <div class="the-current-snippet">
-    <the-action-button color="dark-rosa" @click="copyToClipboard">
+    <the-button color="dark-rosa" @click="copyToClipboard">
       Copy to clipboard
       <span v-if="copySuccess">(done)</span>
-    </the-action-button>
+    </the-button>
     <pre v-text="snippetPrepared" />
   </div>
 </template>
@@ -71,6 +71,10 @@ const copyToClipboard = async () => {
   position: relative;
   background: #fff;
   color: #888;
+
+  .the-button {
+    margin-bottom: 1em;
+  }
 
   pre {
     overflow: auto;

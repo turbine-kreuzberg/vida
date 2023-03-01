@@ -6,12 +6,14 @@ import { useWidget } from '../composables/useWidget';
 import TheContentPages from './HelpCenter/TheContentPages.vue';
 import TheBackButton from './HelpCenter/TheBackButton.vue';
 import TheLogo from './TheLogo.vue';
+import TheX from './TheX.vue';
 
 const { configuration } = useWidget();
 </script>
 
 <template>
   <div v-if="configuration" class="the-help-center">
+    <the-x />
     <the-logo />
     <the-back-button v-if="configuration.hasActiveModule()" />
     <the-scroll-area>
@@ -32,6 +34,13 @@ const { configuration } = useWidget();
 
 <style scoped lang="scss">
 .the-help-center {
+  position: relative;
   padding: 2em;
+}
+
+.the-x {
+  position: absolute;
+  top: 2em;
+  right: 2em;
 }
 </style>
