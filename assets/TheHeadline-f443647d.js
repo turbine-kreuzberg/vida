@@ -1,1 +1,0 @@
-import{d as t,a as l,o as r,e as c,l as _,n as d,g as p,k as i}from"../index.js";const f=t({__name:"TheHeadline",props:{color:null},setup(e){const o=e,{getColor:s}=l(),a=s(o.color||"dark-rosa");return(n,u)=>(r(),c("div",{class:"the-headline",style:d({"--color":p(a)})},[_(n.$slots,"default",{},void 0,!0)],4))}});const h=i(f,[["__scopeId","data-v-b08bfafc"]]);export{h as T};
