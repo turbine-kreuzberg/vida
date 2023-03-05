@@ -48,6 +48,6 @@ onMounted(() => {
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  color: #000;
+  color: var(--violet);
 }
 </style>

@@ -27,7 +27,7 @@ const props = withDefaults(defineProps<Props>(), {
 .the-text-content {
   font-size: 0.9em;
   line-height: 1.7em;
-  margin-bottom: 20px;
+  margin-bottom: 2em;
 
   :deep(a) {
     color: inherit;

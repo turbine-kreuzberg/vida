@@ -2,6 +2,7 @@
 import { computed, defineAsyncComponent, ref } from 'vue';
 import { useWidget } from './composables/useWidget';
 import { useColors } from './composables/useColors';
+import TheHeadline from './components/TheHeadline.vue';
 
 const { configuration } = useWidget();
 const { cssVariables } = useColors();
@@ -38,6 +39,8 @@ const style = ref<{ [key: string]: any }>({
       </p>
     </the-text-content>
     <the-configurator />
+    <the-headline :border-top="true">Reach out to us:</the-headline>
+    <the-text-content> Will follow ...</the-text-content>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -59,6 +62,6 @@ const style = ref<{ [key: string]: any }>({
 }
 
 .the-configurator {
-  margin-top: 2em;
+  margin-bottom: 2em;
 }
 </style>
