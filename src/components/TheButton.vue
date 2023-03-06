@@ -1,14 +1,12 @@
 <script lang="ts" setup>
-import { useColors } from '../composables/useColors';
-import { ref } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<{
   color?: string;
   label?: string;
 }>();
 
-const { getColor } = useColors();
-const color = ref(getColor(props.color || 'black'));
+const color = computed(() => props.color || 'var(--violet)');
 </script>
 <template>
   <a class="the-button" :style="{ '--color': color }"> <slot /> {{ label }} </a>

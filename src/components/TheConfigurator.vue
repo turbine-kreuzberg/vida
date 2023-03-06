@@ -25,7 +25,7 @@ watch(institution, (v) => configuration.value.setInstitution(findInstitution(v))
 watch(forceOpen, (v) => configuration.value.setForceOpen(v));
 </script>
 <template>
-  <div class="the-configurator">
+  <div class="the-configurator" :style="{ '--color': color }">
     <div class="the-intro">
       <the-headline>Configure your widget</the-headline>
       Keep Widget open during configuration <input v-model="forceOpen" type="checkbox" />
@@ -75,7 +75,7 @@ watch(forceOpen, (v) => configuration.value.setForceOpen(v));
         </select>
       </label>
     </div>
-    <the-current-snippet />
+    <the-current-snippet :button-color="color" />
   </div>
 </template>
 <style scoped lang="scss">
@@ -89,7 +89,7 @@ watch(forceOpen, (v) => configuration.value.setForceOpen(v));
 }
 
 .the-configurator {
-  border: 2px solid var(--dark-rosa);
+  border: 2px solid var(--color);
   padding: 2em;
   border-radius: 1em;
 }

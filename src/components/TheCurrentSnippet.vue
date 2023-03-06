@@ -4,6 +4,10 @@ import { computed, ref } from 'vue';
 import { useWidget } from '../composables/useWidget';
 import TheButton from './TheButton.vue';
 
+const props = defineProps<{
+  buttonColor: string;
+}>();
+
 const { configuration } = useWidget();
 
 const copySuccess = ref(false);
@@ -53,10 +57,12 @@ const copyToClipboard = async () => {
 
   window.setTimeout(() => (copySuccess.value = false), 1000);
 };
+
+const buttonColor = computed(() => props.buttonColor || 'var(--violet)');
 </script>
 <template>
   <div class="the-current-snippet">
-    <the-button color="dark-rosa" @click="copyToClipboard">
+    <the-button :color="buttonColor" @click="copyToClipboard">
       Copy to clipboard
       <span v-if="copySuccess">(done)</span>
     </the-button>
@@ -67,6 +73,7 @@ const copyToClipboard = async () => {
 .the-action-button {
   margin-bottom: 1em;
 }
+
 .the-current-snippet {
   position: relative;
   background: #fff;
@@ -91,7 +98,7 @@ const copyToClipboard = async () => {
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: var(--dark-rosa);
+      background-color: var(--color);
     }
 
     &::-webkit-scrollbar-corner {
