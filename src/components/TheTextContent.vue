@@ -42,6 +42,10 @@ const props = withDefaults(defineProps<Props>(), {
     }
   }
 
+  :deep(u) {
+    text-decoration: underline;
+  }
+
   :deep(h3) {
     font-size: 1.2em;
     font-weight: bold;
