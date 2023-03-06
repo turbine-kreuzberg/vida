@@ -43,4 +43,8 @@ const { configuration } = useWidget();
   top: 2em;
   right: 2em;
 }
+
+.the-logo {
+  margin-bottom: 0.5em;
+}
 </style>

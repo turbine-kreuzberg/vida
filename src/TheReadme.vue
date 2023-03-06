@@ -8,6 +8,10 @@ const { cssVariables } = useColors();
 
 const TheHeadline = defineAsyncComponent(() => import('./components/TheHeadline.vue'));
 
+const TheNavigation = defineAsyncComponent(
+  () => import('./components/TheNavigation.vue')
+);
+
 const TheTextContent = defineAsyncComponent(
   () => import('./components/TheTextContent.vue')
 );
@@ -31,11 +35,27 @@ const style = ref<{ [key: string]: any }>({
   '--color': color,
   ...cssVariables.value
 });
+
+const navigation = ref([
+  {
+    anchor: 'break-the-cycle',
+    label: 'about'
+  },
+  {
+    anchor: 'use',
+    label: 'use'
+  },
+  {
+    anchor: 'reach-out',
+    label: 'reach out'
+  }
+]);
 </script>
 <template>
   <div class="the-readme" :style="style">
     <the-logo />
-    <the-headline :border-top="true">let’s break the cycle</the-headline>
+    <the-navigation :items="navigation" />
+    <the-headline id="break-the-cycle"> let’s break the cycle </the-headline>
     <the-text-content>
       <p>
         Worldwide, more than one in three women¹ and up to one in five men² have
@@ -78,7 +98,7 @@ const style = ref<{ [key: string]: any }>({
         >.
       </p>
     </the-text-content>
-    <the-headline :border-top="true">Usage</the-headline>
+    <the-headline id="use" :border-top="true">Usage</the-headline>
     <the-text-content>
       <p>There are <u>three simple steps</u> to using the Vida Widget on your website.</p>
       <ul>
@@ -90,7 +110,7 @@ const style = ref<{ [key: string]: any }>({
       </ul>
     </the-text-content>
     <the-configurator />
-    <the-headline :border-top="true">Reach out to us:</the-headline>
+    <the-headline id="reach-out" :border-top="true">Reach out to us:</the-headline>
     <the-text-content>
       <p>
         For more information about Vida and how you can participate, please reach out to
@@ -119,6 +139,10 @@ const style = ref<{ [key: string]: any }>({
   }
 }
 
+.the-logo {
+  margin-bottom: 0.2em;
+}
+
 .the-current-snippet {
   font-size: 0.7em;
 }
@@ -133,5 +157,9 @@ const style = ref<{ [key: string]: any }>({
 
 .the-newsletter-subscription {
   margin-bottom: 2em;
+}
+
+.the-navigation {
+  margin-bottom: 1em;
 }
 </style>

@@ -12,7 +12,6 @@
   font-size: 3em;
   font-weight: 500;
   line-height: 0.8em;
-  margin-bottom: 0.7em;
 
   @media (max-width: 500px) {
     flex-direction: row;
