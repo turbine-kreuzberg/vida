@@ -15,6 +15,10 @@ const TheConfigurator = defineAsyncComponent(
   () => import('./components/TheConfigurator.vue')
 );
 
+const TheNewsletterSubscription = defineAsyncComponent(
+  () => import('./components/TheNewsletterSubscription.vue')
+);
+
 const TheYoutubeVideo = defineAsyncComponent(
   () => import('./components/TheYoutubeVideo.vue')
 );
@@ -98,6 +102,7 @@ const style = ref<{ [key: string]: any }>({
         <a href="mailto:press@turbinekreuzberg.com">press@turbinekreuzberg.com</a>.
       </p>
     </the-text-content>
+    <the-newsletter-subscription v-once />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -123,6 +128,10 @@ const style = ref<{ [key: string]: any }>({
 }
 
 .the-youtube-video {
+  margin-bottom: 2em;
+}
+
+.the-newsletter-subscription {
   margin-bottom: 2em;
 }
 </style>
