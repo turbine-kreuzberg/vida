@@ -5,7 +5,7 @@ import TheModules from './HelpCenter/TheModules.vue';
 import { useWidget } from '../composables/useWidget';
 import TheContentPages from './HelpCenter/TheContentPages.vue';
 import TheBackButton from './HelpCenter/TheBackButton.vue';
-import TheLogo from './TheLogo.vue';
+import TheLogo from './Svg/TheLogo.vue';
 import TheX from './TheX.vue';
 
 const { configuration } = useWidget();
@@ -45,6 +45,7 @@ const { configuration } = useWidget();
 }
 
 .the-logo {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+  width: 170px;
 }
 </style>

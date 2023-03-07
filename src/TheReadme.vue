@@ -27,7 +27,7 @@ const TheYoutubeVideo = defineAsyncComponent(
   () => import('./components/TheYoutubeVideo.vue')
 );
 
-const TheLogo = defineAsyncComponent(() => import('./components/TheLogo.vue'));
+const TheLogo = defineAsyncComponent(() => import('./components/Svg/TheLogo.vue'));
 
 const color = computed(() => configuration.value.getHandColor());
 
@@ -150,6 +150,7 @@ const navigation = ref([
 
 .the-logo {
   margin-bottom: 0.2em;
+  width: 300px;
 }
 
 .the-current-snippet {
