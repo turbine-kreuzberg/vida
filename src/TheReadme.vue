@@ -55,15 +55,24 @@ const navigation = ref([
   <div class="the-readme" :style="style">
     <the-logo />
     <the-navigation :items="navigation" />
-    <the-headline id="break-the-cycle"> let’s break the cycle </the-headline>
+    <the-headline id="break-the-cycle"> let’s break the cycle</the-headline>
     <the-text-content>
       <p>
-        Worldwide, more than one in three women¹ and up to one in five men² have
-        experienced intimate partner violence. In most cases, the severity and frequency
-        of the violence increase with time. To prevent this spiral of violence, help needs
-        to be made available quickly and in an easily accessible way. We are convinced
-        that open technology is a powerful tool for providing victims with access to
-        support resources and prevention strategies, as well as creating further
+        Worldwide, more than one in three women<a
+          target="_blank"
+          href="https://www.who.int/news-room/fact-sheets/detail/violence-against-women"
+          >¹</a
+        >
+        and up to one in five men<a
+          target="_blank"
+          href="https://www.aerzteblatt.de/int/archive/article/214902/Domestic-Violence-Against-Men-Prevalence-and-Risk-Factors"
+          >²</a
+        >
+        have experienced intimate partner violence. In most cases, the severity and
+        frequency of the violence increase with time. To prevent this spiral of violence,
+        help needs to be made available quickly and in an easily accessible way. We are
+        convinced that open technology is a powerful tool for providing victims with
+        access to support resources and prevention strategies, as well as creating further
         awareness.
       </p>
     </the-text-content>
