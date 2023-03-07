@@ -98,7 +98,7 @@ const buttonColor = computed(() => props.buttonColor || 'var(--violet)');
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: var(--color);
+      background-color: #f3f3f3;
     }
 
     &::-webkit-scrollbar-corner {

@@ -33,7 +33,7 @@ const activate = () => {
 </script>
 <template>
   <div class="the-newsletter-subscription">
-    <the-button v-if="!isActive" :color="'var(--dark-rosa)'" @click="activate">
+    <the-button v-if="!isActive" :color="'var(--violet)'" @click="activate">
       Keep me up to date
     </the-button>
     <the-button v-if="isLoading" :disabled="true">Loading ...</the-button>
@@ -54,7 +54,7 @@ const activate = () => {
 <style lang="scss" scoped>
 iframe {
   border: 2px solid var(--red);
-  border-radius: 2em;
+  border-radius: 1em;
 }
 .the-hidden {
   display: none;
