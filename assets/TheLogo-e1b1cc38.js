@@ -1,1 +1,0 @@
-import{k as c,o as t,e as _,p as a,i as d,j as o}from"../index.js";const n={},s=e=>(a("data-v-8f8c4fb9"),e=e(),d(),e),i={class:"the-logo"},p=s(()=>o("div",{class:"first-line"},"vida",-1)),f=s(()=>o("div",{class:"second-line"},"widget",-1)),r=[p,f];function l(e,h){return t(),_("div",i,r)}const u=c(n,[["render",l],["__scopeId","data-v-8f8c4fb9"]]);export{u as default};
