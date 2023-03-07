@@ -134,7 +134,7 @@ export class Configuration {
   }
 
   isVisible(): boolean {
-    return this.visible;
+    return this.forceOpen || this.visible;
   }
 
   open(): this {

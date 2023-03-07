@@ -26,13 +26,13 @@ onMounted(() => {
 <template>
   <div v-if="isInitialized" class="the-widget" :style="cssVariables">
     <TheOpener
-      v-if="configuration.isHandVisible()"
+      v-if="configuration.isHandVisible() && !configuration.isVisible()"
       ref="opener"
       :position="configuration.getHandPosition()"
       @click="!configuration.isVisible() ? configuration.open() : configuration.close()"
     />
     <ThePopup
-      v-if="configuration.isForceOpen() || configuration.isVisible()"
+      v-if="configuration.isVisible()"
       ref="popup"
       :position="configuration.getHandPosition()"
     >

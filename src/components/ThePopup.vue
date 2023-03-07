@@ -27,23 +27,23 @@ const props = defineProps<{
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 
   &-bottom-left {
-    left: 0;
-    bottom: 100px;
+    left: 10px;
+    bottom: 30px;
   }
 
   &-bottom-right {
-    right: 0;
-    bottom: 100px;
+    right: 10px;
+    bottom: 30px;
   }
 
   &-top-right {
-    top: 100px;
-    right: 0;
+    top: 20px;
+    right: 10px;
   }
 
   &-top-left {
-    top: 100px;
-    left: 0;
+    top: 20px;
+    left: 10px;
   }
 
   &-centered {

@@ -1,15 +1,11 @@
 <script lang="ts" setup>
 import TheHandClosed from './Svg/TheHandClosed.vue';
 import TheHandOpen from './Svg/TheHandOpen.vue';
-import TheClose from './Svg/TheClose.vue';
 import { ref } from 'vue';
-import { useWidget } from '../composables/useWidget';
 
 const props = defineProps<{
   position: string;
 }>();
-
-const { configuration } = useWidget();
 
 const isHover = ref<boolean>(false);
 </script>
@@ -20,13 +16,8 @@ const isHover = ref<boolean>(false);
     @mouseenter="isHover = true"
     @mouseleave="isHover = false"
   >
-    <template v-if="!configuration.isVisible()">
-      <the-hand-closed v-if="isHover" />
-      <the-hand-open v-else />
-    </template>
-    <template v-else>
-      <the-close width="80" height="80" />
-    </template>
+    <the-hand-closed v-if="isHover" />
+    <the-hand-open v-else />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -36,7 +27,7 @@ const isHover = ref<boolean>(false);
   left: auto;
   bottom: auto;
   right: auto;
-  width: 80px;
+  width: 40px;
   height: 80px;
   text-align: center;
   box-sizing: border-box;
@@ -46,23 +37,23 @@ const isHover = ref<boolean>(false);
   z-index: 1000;
 
   &.top-left {
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
   }
 
   &.top-right {
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
   }
 
   &.bottom-left {
-    bottom: 10px;
-    left: 10px;
+    bottom: 20px;
+    left: 20px;
   }
 
   &.bottom-right {
-    bottom: 10px;
-    right: 10px;
+    bottom: 20px;
+    right: 20px;
   }
 
   &.centered {
