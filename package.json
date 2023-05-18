@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore --fix src"
   },
   "dependencies": {
-    "vue": "3.2.47"
+    "vue": "3.3.4"
   },
   "devDependencies": {
     "@fontsource/work-sans": "^4.5.14",
