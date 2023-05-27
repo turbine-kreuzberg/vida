@@ -21,7 +21,7 @@ jobs:
       - run: VITE_BASE=https://vida.turbinekreuzberg.com/ yarn build
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
           branch: live # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
