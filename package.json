@@ -13,7 +13,7 @@
     "vue": "3.3.4"
   },
   "devDependencies": {
-    "@fontsource/work-sans": "^4.5.14",
+    "@fontsource/work-sans": "^5.0.0",
     "@intlify/vite-plugin-vue-i18n": "6.0.3",
     "@types/leaflet": "1.9.3",
     "@types/node": "18.16.16",
