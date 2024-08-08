@@ -22,7 +22,7 @@
     "@vitejs/plugin-vue": "4.2.3",
     "@vue/eslint-config-prettier": "7.1.0",
     "@vue/eslint-config-typescript": "11.0.3",
-    "@vueuse/core": "10.1.2",
+    "@vueuse/core": "10.11.1",
     "eslint": "8.41.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-prettier": "4.2.1",
